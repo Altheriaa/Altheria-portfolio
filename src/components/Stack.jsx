@@ -1,56 +1,62 @@
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import {
-  SiReact,
-  SiNextdotjs,
-  SiVite,
-  SiTypescript,
-  SiTailwindcss,
-  SiFramer,
   SiLaravel,
   SiPhp,
-  SiNodedotjs,
-  SiExpress,
-  SiLivewire,
-  SiFilament,
+  SiCodeigniter,
   SiMysql,
-  SiPostgresql,
   SiGit,
-  SiDocker,
+  SiUbuntu,
   SiLinux,
-  SiRedis
+  SiTailwindcss,
+  SiBootstrap,
+  SiJavascript,
+  SiHtml5,
+  SiPostman,
+  SiVuedotjs,
+  SiInertia,
+  SiWhatsapp
 } from 'react-icons/si'
+import { LuServer, LuLayers, LuCreditCard, LuShoppingBag } from 'react-icons/lu'
 
 const categories = [
   {
-    title: 'FRONTEND',
+    title: 'BACKEND & FRAMEWORKS',
     items: [
-      { name: 'REACT', Icon: SiReact, level: 90 },
-      { name: 'NEXT.JS', Icon: SiNextdotjs, level: 75 },
-      { name: 'VITE', Icon: SiVite, level: 85 },
-      { name: 'TYPESCRIPT', Icon: SiTypescript, level: 70 },
-      { name: 'TAILWIND', Icon: SiTailwindcss, level: 88 },
-      { name: 'FRAMER', Icon: SiFramer, level: 72 },
+      { name: 'LARAVEL', Icon: SiLaravel, level: 95 },
+      { name: 'FILAMENT PHP', Icon: LuLayers, level: 92 },
+      { name: 'INERTIA.JS', Icon: SiInertia, level: 88 },
+      { name: 'PHP NATIVE', Icon: SiPhp, level: 90 },
+      { name: 'REST API', Icon: SiPostman, level: 90 },
+      { name: 'CODEIGNITER', Icon: SiCodeigniter, level: 75 },
     ]
   },
   {
-    title: 'BACKEND',
+    title: 'GATEWAYS & DEV TOOLS',
     items: [
-      { name: 'LARAVEL', Icon: SiLaravel, level: 92 },
-      { name: 'PHP', Icon: SiPhp, level: 88 },
-      { name: 'NODE.JS', Icon: SiNodedotjs, level: 70 },
-      { name: 'EXPRESS', Icon: SiExpress, level: 65 },
-      { name: 'LIVEWIRE', Icon: SiLivewire, level: 80 },
-      { name: 'FILAMENT', Icon: SiFilament, level: 75 },
+      { name: 'MIDTRANS PG', Icon: LuCreditCard, level: 92 },
+      { name: 'WHATSAPP API', Icon: SiWhatsapp, level: 90 },
+      { name: 'GIT & GITHUB', Icon: SiGit, level: 88 },
+      { name: 'POSTMAN API', Icon: SiPostman, level: 86 },
     ]
   },
   {
-    title: 'DATABASE & TOOLS',
+    title: 'DATABASE & SERVER INFRASTRUCTURE',
     items: [
-      { name: 'MYSQL', Icon: SiMysql, level: 85 },
-      { name: 'POSTGRESQL', Icon: SiPostgresql, level: 72 },
-      { name: 'GIT', Icon: SiGit, level: 90 },
-      { name: 'LINUX', Icon: SiLinux, level: 70 },
+      { name: 'MYSQL', Icon: SiMysql, level: 90 },
+      { name: 'UBUNTU SERVER', Icon: SiUbuntu, level: 85 },
+      { name: 'LINUX ADMIN', Icon: SiLinux, level: 82 },
+      { name: 'SERVER DEPLOY', Icon: LuServer, level: 80 },
+    ]
+  },
+  {
+    title: 'FRONTEND & INTERFACE',
+    items: [
+      { name: 'VUE.JS', Icon: SiVuedotjs, level: 86 },
+      { name: 'TAILWIND CSS', Icon: SiTailwindcss, level: 88 },
+      { name: 'BOOTSTRAP', Icon: SiBootstrap, level: 90 },
+      { name: 'JAVASCRIPT', Icon: SiJavascript, level: 82 },
+      { name: 'HTML5 / CSS3', Icon: SiHtml5, level: 92 },
     ]
   }
 ]
@@ -68,7 +74,7 @@ export default function Stack() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
           >
-            TOOLS &<br />TECHNOLOGIES.
+            TECH <br />STACK.
           </motion.h2>
         </div>
       </div>

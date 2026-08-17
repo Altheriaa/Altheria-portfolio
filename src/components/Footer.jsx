@@ -4,12 +4,12 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__left">
-        <span className="footer__name">ALTHERIA.</span>
-        <span className="footer__sub">FULL STACK WEB DEVELOPER // INDONESIA</span>
+        <span className="footer__name">ALTHERIA</span>
+        <span className="footer__sub">FULLSTACK WEB DEVELOPER // BANDA ACEH, INDONESIA</span>
       </div>
 
       <div className="footer__center">
-        <span className="mono">© {year} · BUILT WITH REACT + VITE</span>
+        <span className="mono">© {year} · BUILT WITH REACT + VITE + LARAVEL SPIRIT</span>
       </div>
 
       <div className="footer__status">

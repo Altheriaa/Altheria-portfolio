@@ -1,18 +1,20 @@
 import { motion } from 'framer-motion'
 
 const specs = [
-  { key: 'ROLE', val: 'Full Stack Web Developer' },
-  { key: 'FRAMEWORK', val: 'React · Laravel · Next.js' },
-  { key: 'LANGUAGES', val: 'PHP · JS · TypeScript' },
-  { key: 'DATABASE', val: 'MySQL · PostgreSQL' },
-  { key: 'TOOLS', val: 'Git · Vite' },
-  { key: 'STATUS', val: 'Open to Work' },
+  { key: 'FULL_NAME', val: 'Muhammad Daffa Alfharijy' },
+  { key: 'ROLE', val: 'Backend & Web Developer' },
+  { key: 'LOCATION', val: 'Lamlagang, Banda Aceh, Aceh' },
+  { key: 'EDUCATION', val: 'S1 Sistem Informasi — Univ. Abulyatama' },
+  { key: 'PREVIOUS_EDU', val: 'SMK Negeri 5 Telkom Banda Aceh (RPL)' },
+  { key: 'CORE_STACK', val: 'Laravel · FilamentPHP · Vue/Inertia · Midtrans' },
+  { key: 'SERVER_MGMT', val: 'Ubuntu Linux · Nginx · MySQL' },
+  { key: 'STATUS', val: 'Available // Open to Work' },
 ]
 
 const stats = [
-  { value: '2', label: 'YEARS EXP' },
-  { value: '10', label: 'PROJECTS' },
-  { value: '3', label: 'FRAMEWORKS' },
+  { value: '4+', label: 'YEARS IN TECH' },
+  { value: '10+', label: 'SYSTEMS BUILT' },
+  { value: '2', label: 'INTERNATIONAL AWARDS' },
   { value: '100%', label: 'COMMITTED' },
 ]
 
@@ -41,7 +43,7 @@ export default function About() {
           </motion.h2>
         </div>
         <div className="about__nav-hint">
-          <span className="mono">VERIFIED // RECORDS</span>
+          <span className="mono">VERIFIED // RESUME_DATA</span>
         </div>
       </div>
 
@@ -54,18 +56,18 @@ export default function About() {
           transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
         >
           <p>
-            Saya adalah seorang Full Stack Web Developer dengan passion dalam membangun
-            sistem digital yang skalabel, efisien, dan berdampak nyata.
+            Saya adalah seorang Web Developer berusia 22 tahun berbasis di Banda Aceh,
+            dengan fokus mendalam pada pengembangan sistem backend menggunakan framework Laravel.
           </p>
           <p>
-            Dengan pengalaman lebih dari 3 tahun di industri, saya telah mengerjakan
-            berbagai proyek mulai dari sistem manajemen inventory, aplikasi kasir,
-            hingga platform web modern berbasis React dan Laravel.
+            Berpengalaman dalam merancang dan mengembangkan berbagai ekosistem aplikasi web skala produksi,
+            seperti <strong>Sistem Informasi KKN Terpadu Unaya</strong> (RESTful API SIAKAD & Midtrans), sistem informasi reservasi <strong>Marko Barbershop</strong> dengan WhatsApp Gateway & QR Code, platform e-learning <strong>E-Plant Unaya (eplant-unaya.bio)</strong> berbasis Inertia & Vue, platform e-commerce <strong>Bay Coffee (baycoffee.shop)</strong> dengan payment gateway Midtrans, website resmi Fakultas Teknik Universitas Abulyatama, Sistem Informasi MBKM,
+            aplikasi Bank Sampah (sampah.shop), hingga CMS administrasi desa dan sistem pemerintahan.
           </p>
           <p>
-            Saya percaya bahwa kode yang baik bukan hanya tentang fungsi — ia tentang
-            keterbacaan, maintainability, dan pengalaman pengguna yang mulus.
-            Clean code bukan pilihan, itu standar.
+            Selain backend engineering, saya memiliki keahlian dalam integrasi payment gateway, Inertia.js & Vue.js, administrasi server Linux (Ubuntu),
+            manajemen basis data terintegrasi, konfigurasi panel admin Filament, serta komputasi awan.
+            Saya berkomitmen membangun sistem yang aman, efisien, dan berdampak nyata bagi operasional bisnis dan komunitas.
           </p>
 
           <div className="about__stats">
@@ -93,7 +95,7 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
         >
-          <div className="about__specs-title">SYSTEM_SPECS // DEV_CONFIG</div>
+          <div className="about__specs-title">SYSTEM_SPECS // PROFILE_DATA</div>
           {specs.map((s, i) => (
             <motion.div
               key={s.key}

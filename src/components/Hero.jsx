@@ -32,9 +32,9 @@ export default function Hero() {
       {/* Meta bar */}
       <div className="hero__meta-bar">
         <span>
-          &lt; <strong>SYS_INIT</strong> &gt; OPT.CLARITY &lt; <strong>STACK_V3.2</strong> &gt;
+          &lt; <strong>SYS_INIT</strong> &gt; OPT.CLARITY &lt; <strong>BACKEND // LARAVEL</strong> &gt;
         </span>
-        <span>FORMAT: REACT // VITE &nbsp;&nbsp;&nbsp; LOCATION: INDONESIA / 01</span>
+        <span>FORMAT: FULLSTACK // WEB &nbsp;&nbsp;&nbsp; LOCATION: BANDA ACEH / 01</span>
       </div>
 
       {/* Main 3-column grid */}
@@ -46,20 +46,20 @@ export default function Hero() {
               {[...Array(8)].map((_, i) => <span key={i} />)}
             </div>
             <div className="hero__status-dot" />
-            <span className="hero__status-text">SYS_ONLINE // AVAILABLE</span>
+            <span className="hero__status-text">SYS_ONLINE // AVAILABLE FOR WORK</span>
           </motion.div>
 
           <motion.h1 className="hero__title" custom={1} initial="hidden" animate="visible" variants={fadeUp}>
             <span>BUILDING</span>
-            <span>DIGITAL</span>
+            <span>STRUCTURED</span>
             <span>SYSTEMS.</span>
             <span className="dim">FOR THE WEB.</span>
           </motion.h1>
 
           <motion.div className="hero__tagline" custom={2} initial="hidden" animate="visible" variants={fadeUp}>
-            <p>***TURNING IDEAS INTO SCALABLE CODE____</p>
-            <p>____THERE'S NO SHORTCUT TO EXCELLENCE.</p>
-            <p>SHIP FAST. BUILD CLEAN. THINK DEEP.////</p>
+            <p>***TURNING REQUIREMENTS INTO SECURE CODE____</p>
+            <p>____SPECIALIZED IN LARAVEL, FILAMENT & MYSQL.</p>
+            <p>EFFICIENT. SECURE. SCALABLE. STRUCTURED.////</p>
           </motion.div>
 
           <motion.div className="hero__cta" custom={3} initial="hidden" animate="visible" variants={fadeUp}>
@@ -106,12 +106,12 @@ export default function Hero() {
               }}
             />
 
-            <img src="/avatar.jpg" alt="Developer Portrait" className="hero__photo" />
+            <img src="/avatar.jpg" alt="Muhammad Daffa Alfharijy" className="hero__photo" />
           </div>
 
           <div className="hero__photo-label">
-            <span>FOCUS_LOCK</span>
-            <span>TARGET.ACQ</span>
+            <span>DAFFA // 2026</span>
+            <span>BACKEND_DEV</span>
           </div>
         </motion.div>
 
@@ -125,15 +125,24 @@ export default function Hero() {
         >
           <div className="hero__info-block">
             <span className="hero__info-label">STATUS</span>
-            <span className="hero__info-value">OPEN_TO_WORK // FREELANCE</span>
+            <span className="hero__info-value">OPEN TO WORK // FULLSTACK</span>
           </div>
           <div className="hero__info-block">
-            <span className="hero__info-label">BASE</span>
-            <span className="hero__info-value">INDONESIA, ID</span>
+            <span className="hero__info-label">LOCATION</span>
+            <span className="hero__info-value">BANDA ACEH, ID</span>
           </div>
           <div className="hero__info-block">
-            <span className="hero__info-label">TIMEZONE</span>
-            <span className="hero__info-value">UTC+7 // WIB</span>
+            <span className="hero__info-label">SPECIALTY</span>
+            <span className="hero__info-value">LARAVEL · FILAMENT · CMS</span>
+          </div>
+
+          <div className="hero__focus-box">
+            <div className="hero__focus-title">CORE_COMPETENCY.</div>
+            <div className="hero__focus-text">
+              DATABASE ARCHITECTURE.<br />
+              SERVER ADMINISTRATION.<br />
+              REST API & AUTH FLOW.
+            </div>
           </div>
 
           <div className="hero__social-connect">
@@ -142,7 +151,7 @@ export default function Hero() {
               <a href="https://github.com/altheriaa" target="_blank" rel="noreferrer" className="hero__social-btn" title="GitHub">
                 <FaGithub size={18} />
               </a>
-              <a href="https://instagram.com/dfalrzy" target="_blank" rel="noreferrer" className="hero__social-btn" title="Instagram">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="hero__social-btn" title="Instagram">
                 <FaInstagram size={18} />
               </a>
             </div>
@@ -157,10 +166,10 @@ export default function Hero() {
           <span>SYS [ONLINE]</span>
         </div>
         <div className="hero__statusbar-item">
-          <span>STACK: REACT + LARAVEL</span>
+          <span>STACK: LARAVEL + FILAMENT + MYSQL</span>
         </div>
         <div className="hero__statusbar-item">
-          <span>BUILD: CLEAN_CODE // 2026</span>
+          <span>BASE: BANDA ACEH // 2026</span>
         </div>
       </div>
     </section>

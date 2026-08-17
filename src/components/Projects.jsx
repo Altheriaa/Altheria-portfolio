@@ -1,92 +1,312 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-import { LuExternalLink, LuChevronLeft, LuChevronRight } from 'react-icons/lu'
+import { LuExternalLink, LuChevronLeft, LuChevronRight, LuX, LuLayers, LuServer, LuCalendar, LuGlobe } from 'react-icons/lu'
 import { FaGithub } from 'react-icons/fa6'
 
 const allProjects = [
   {
-    id: 'proj-001',
-    tag: 'INVENTORY_SYS',
-    name: 'STOK FIFO SYSTEM',
-    desc: 'SISTEM MANAJEMEN STOK · FIFO METHOD & INVENTORY FLOW',
-    year: '2026',
-    stack: ['LARAVEL', 'MYSQL', 'BLADE'],
-    category: 'BACKEND',
-    img: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80&grayscale',
-    github: 'https://github.com',
+    id: 'proj-012',
+    tag: 'ELEARNING_PBL',
+    name: 'EDUGENZI — PROJECT BASED LEARNING (PBL) LMS',
+    desc: 'PLATFORM E-LEARNING PROJECT BASED LEARNING · MULTI-ROLE (ADMIN, MENTOR, PESERTA), ENROLLMENT & SERTIFIKASI',
+    fullDesc: 'Platform e-learning berbasis Project Based Learning (PBL) Edugenzi Banda Aceh yang dirancang untuk mengelola pelatihan keahlian digital seperti coding, AI, dan desain grafis secara terstruktur. Dibangun menggunakan Laravel, sistem ini menerapkan arsitektur Multi-Role (Super Admin, Mentor, dan Peserta Didik) dengan alur manajemen enrollment program pelatihan, penugasan proyek riil, evaluasi berkala, sistem penilaian komprehensif, hingga penerbitan sertifikat digital.',
+    year: '2025 - PRESENT',
+    role: 'Fullstack Developer & System Architect',
+    client: 'Edugenzi Banda Aceh',
+    stack: ['LARAVEL', 'MYSQL', 'MULTI-ROLE RBAC', 'PBL ENGINE', 'TAILWIND CSS'],
+    category: 'FULLSTACK',
+    img: 'src/assets/Project/Edugenzi/2.jpeg',
+    gallery: [
+      'src/assets/Project/Edugenzi/2.jpeg',
+      'src/assets/Project/Edugenzi/4.jpeg',
+      'src/assets/Project/Edugenzi/3.jpeg',
+      'src/assets/Project/Edugenzi/5.jpeg',
+      'src/assets/Project/Edugenzi/1.jpeg'
+    ],
+    features: [
+      'Arsitektur Multi-Role RBAC terstruktur dengan hak akses spesifik untuk 3 level pengguna: Admin, Mentor, dan Peserta Didik',
+      'Engine Project Based Learning (PBL) interaktif untuk penugasan proyek riil (Coding, AI, Desain 3D), submission tugas, dan evaluasi hasil kerja',
+      'Sistem Manajemen Enrollment & Program Pelatihan untuk registrasi peserta, plotting durasi kelas, dan pemantauan status pembelajaran aktif',
+      'Modul evaluasi terintegrasi dengan rubrik penilaian mentor serta sistem validasi penerbitan sertifikat kelulusan digital'
+    ],
+    github: 'https://github.com/altheriaa',
+    live: 'https://edugenzi.my.id',
+  },
+  {
+    id: 'proj-011',
+    tag: 'GOV_HELPDESK',
+    name: 'E-HELPDESK IT SUPPORT — DINAS PENDIDIKAN ACEH',
+    desc: 'SISTEM MANAJEMEN TIKET IT SUPPORT INSTANSI · FILAMENT PHP, REALTIME CHAT, WEBHOOK & NOTIFIKASI FONNTE WA',
+    fullDesc: 'Sistem Informasi E-Helpdesk & IT Support terpadu untuk penanganan kendala teknis dan infrastruktur IT di lingkungan Dinas Pendidikan (Disdik) Aceh. Dibangun dengan framework Laravel & Filament PHP, sistem ini dilengkapi alur manajemen tiket berbasis Kanban interaktif, fitur realtime live chat penanganan teknis, integrasi webhook, serta notifikasi otomatis via WhatsApp Gateway (Fonnte) untuk pembaruan status tiket ke pegawai dan teknisi secara realtime.',
+    year: '2025 - PRESENT',
+    role: 'Fullstack Developer & System Architect',
+    client: 'Dinas Pendidikan Aceh',
+    stack: ['LARAVEL', 'FILAMENT PHP', 'FONNTE WA API', 'WEBHOOKS', 'REALTIME CHAT', 'MYSQL'],
+    category: 'FULLSTACK',
+    img: 'src/assets/Project/Helpdesk/2.jpeg',
+    gallery: [
+      'src/assets/Project/Helpdesk/2.jpeg',
+      'src/assets/Project/Helpdesk/3.jpeg',
+      'src/assets/Project/Helpdesk/4.jpeg',
+      'src/assets/Project/Helpdesk/1.jpeg'
+    ],
+    features: [
+      'Sistem ticketing IT support interaktif dengan tampilan Kanban board dan tabel untuk tracking status kendala (Baru, Diproses, Selesai)',
+      'Integrasi notifikasi WhatsApp realtime via Fonnte Gateway & Webhook callback untuk pembaruan status progres tiket secara instan',
+      'Fitur Realtime Chat interaktif antara pelapor/pegawai unit kerja dengan tim teknisi IT Support untuk troubleshooting kendala',
+      'Dashboard analitik eksekutif, pelacakan rasio penyelesaian kendala, dan modul rekapitulasi data laporan tiket dengan fitur Export PDF'
+    ],
+    github: 'https://github.com/altheriaa',
+    live: 'https://itsupportaceh.my.id',
+  },
+  {
+    id: 'proj-010',
+    tag: 'ACADEMIC_PORTAL',
+    name: 'SISTEM INFORMASI KKN TERPADU UNIVERSITAS ABULYATAMA',
+    desc: 'PORTAL AKADEMIK KKN TERPADU · INTEGRASI RESTFUL API SIAKAD, PAYMENT GATEWAY MIDTRANS & PLOTTING KELOMPOK',
+    fullDesc: 'Sistem Informasi Kuliah Kerja Nyata (KKN) Terpadu Universitas Abulyatama yang dirancang dengan arsitektur modern berbasis Laravel, Inertia.js, dan Vue.js. Sistem ini mengintegrasikan RESTful API Sistem Informasi Akademik (SIAKAD) universitas untuk sinkronisasi dan verifikasi otomatis data mahasiswa aktif, payment gateway Midtrans untuk transaksi pembayaran pendaftaran KKN secara realtime, serta fitur plotting otomatis/manual penempatan kelompok dan penugasan Dosen Pembimbing Lapangan (DPL).',
+    year: '2025 - PRESENT',
+    role: 'Fullstack Developer & System Architect',
+    client: 'Universitas Abulyatama',
+    stack: ['LARAVEL', 'INERTIA.JS', 'VUE.JS', 'MIDTRANS', 'REST API SIAKAD', 'MYSQL'],
+    category: 'FULLSTACK',
+    img: 'src/assets/Project/Sistem KKN/1.jpeg',
+    gallery: [
+      'src/assets/Project/Sistem KKN/1.jpeg',
+      'src/assets/Project/Sistem KKN/2.jpeg',
+      'src/assets/Project/Sistem KKN/3.jpeg',
+      'src/assets/Project/Sistem KKN/4.jpeg',
+      'src/assets/Project/Sistem KKN/5.jpeg',
+      'src/assets/Project/Sistem KKN/6.jpeg'
+    ],
+    features: [
+      'Integrasi RESTful API SIAKAD Universitas Abulyatama untuk validasi syarat SKS & data akademik mahasiswa aktif',
+      'Integrasi Payment Gateway Midtrans (QRIS, VA Bank, E-Wallet) untuk pembayaran pendaftaran KKN dengan status otomatis',
+      'Modul plotting cerdas penempatan kelompok mahasiswa, penentuan wilayah/desa pengabdian, dan penetapan Dosen Pembimbing Lapangan (DPL)',
+      'Arsitektur SPA modern, reaktif, dan performa kueri optimal menggunakan Laravel, Inertia.js, dan Vue.js'
+    ],
+    github: 'https://github.com/altheriaa',
     live: '#',
   },
   {
-    id: 'proj-002',
-    tag: 'POS_SYSTEM',
-    name: 'KASIR APP',
-    desc: 'POINT OF SALE · BARCODE SCANNER & REALTIME TRANSACTIONS',
-    year: '2026',
-    stack: ['LARAVEL', 'ALPINE.JS', 'TAILWIND'],
+    id: 'proj-009',
+    tag: 'BARBERSHOP_SIM',
+    name: 'MARKO BARBERSHOP — SIM & RESERVATION',
+    desc: 'SISTEM INFORMASI MANAJEMEN BARBERSHOP · RESERVASI ONLINE, CHECK-IN QR CODE & NOTIFIKASI WHATSAPP GATEWAY',
+    fullDesc: 'Aplikasi web Sistem Informasi Manajemen (SIM) operasional dan reservasi online untuk Marko Barbershop. Dibangun murni menggunakan Laravel & Blade, sistem ini mempermudah pelanggan melakukan booking jadwal potong rambut, fitur check-in otomatis di lokasi menggunakan QR Code, serta notifikasi konfirmasi status antrean secara realtime langsung ke nomor WhatsApp pelanggan via integrasi WhatsApp Gateway API.',
+    year: '2024 - 2025',
+    role: 'Fullstack Developer',
+    client: 'Marko Barbershop',
+    stack: ['LARAVEL', 'BLADE', 'MYSQL', 'WA GATEWAY API', 'QR CODE', 'TAILWIND'],
     category: 'FULLSTACK',
-    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80&grayscale',
-    github: 'https://github.com',
-    live: '#',
+    img: 'src/assets/Project/Marko Barber/1.jpeg',
+    gallery: [
+      'src/assets/Project/Marko Barber/1.jpeg',
+      'src/assets/Project/Marko Barber/2.jpeg',
+      'src/assets/Project/Marko Barber/3.jpeg',
+      'src/assets/Project/Marko Barber/4.jpeg',
+      'src/assets/Project/Marko Barber/5.jpeg',
+      'src/assets/Project/Marko Barber/6.jpeg',
+      'src/assets/Project/Marko Barber/7.jpeg',
+      'src/assets/Project/Marko Barber/8.jpeg'
+    ],
+    features: [
+      'Sistem reservasi booking jadwal cukur online dengan pemilihan kapster/barber dan jenis layanan',
+      'Fitur check-in mandiri pelanggan di tempat menggunakan generator & scanner QR Code',
+      'Integrasi WhatsApp Gateway API untuk pengiriman otomatis pesan konfirmasi booking dan pengingat antrean live',
+      'Dashboard admin operasional barbershop untuk rekapitulasi data pelanggan, performa kapster, dan omset harian'
+    ],
+    github: 'https://github.com/altheriaa',
+    live: 'https://markobarber.shop',
+  },
+  {
+    id: 'proj-008',
+    tag: 'ELEARNING_APP',
+    name: 'E-PLANT UNAYA E-LEARNING',
+    desc: 'PLATFORM E-LEARNING BERBASIS WEB · LARAVEL INERTIA VUE JS & MANAJEMEN MATERI PEMBELAJARAN',
+    fullDesc: 'Platform e-learning berbasis web interaktif E-Plant Universitas Abulyatama untuk memfasilitasi pembelajaran digital mahasiswa biologi dan sains pertanian. Dibangun dengan arsitektur modern Laravel Inertia.js dan Vue.js untuk pengalaman SPA yang responsif, mencakup modul materi perkuliahan interaktif, kuis evaluasi, manajemen data mahasiswa, serta pelacakan progres belajar secara realtime.',
+    year: '2024 - PRESENT',
+    role: 'Fullstack Developer',
+    client: 'Universitas Abulyatama',
+    stack: ['LARAVEL', 'INERTIA.JS', 'VUE.JS', 'TAILWIND CSS', 'MYSQL'],
+    category: 'FULLSTACK',
+    img: 'src/assets/Project/E-Plans/Plans 1.jpeg',
+    gallery: [
+      'src/assets/Project/E-Plans/Plans 1.jpeg',
+      'src/assets/Project/E-Plans/Plans 2.jpeg',
+      'src/assets/Project/E-Plans/Plans 3.jpeg',
+      'src/assets/Project/E-Plans/Plans 4.jpeg',
+      'src/assets/Project/E-Plans/Plans 5.jpeg'
+    ],
+    features: [
+      'Arsitektur SPA modern dan dinamis dibangun menggunakan Laravel, Inertia.js, dan Vue.js',
+      'Sistem manajemen materi pembelajaran digital terstruktur dengan fitur unduh dan baca langsung',
+      'Modul kuis dan latihan interaktif untuk evaluasi pemahaman mahasiswa secara realtime',
+      'Manajemen autentikasi pengguna dan dashboard analitik progres belajar mahasiswa'
+    ],
+    github: 'https://github.com/altheriaa',
+    live: 'https://eplant-unaya.bio/',
+  },
+  {
+    id: 'proj-007',
+    tag: 'ECOMMERCE_PAYMENT',
+    name: 'BAY COFFEE E-COMMERCE',
+    desc: 'PLATFORM E-COMMERCE KOPI SPESIALTI · PAYMENT GATEWAY MIDTRANS, INERTIA VUE & CMS FILAMENT',
+    fullDesc: 'Platform e-commerce resmi Bay Coffee untuk penjualan produk kopi spesialti nusantara secara online. Dilengkapi integrasi Payment Gateway Midtrans (QRIS, E-Wallet, VA Bank, Credit Card) dengan sistem notifikasi webhook realtime, antarmuka responsif berbasis Laravel Inertia.js & Vue.js, serta panel admin manajemen pesanan dan inventaris produk berbasis Filament PHP.',
+    year: '2024 - 2025',
+    role: 'Fullstack Developer',
+    client: 'Bay Coffee Specialty',
+    stack: ['LARAVEL', 'INERTIA.JS', 'VUE.JS', 'FILAMENT PHP', 'MIDTRANS', 'MYSQL'],
+    category: 'FULLSTACK',
+    img: 'src/assets/Project/Bay Coffee/Kopi 1.jpeg',
+    gallery: [
+      'src/assets/Project/Bay Coffee/Kopi 1.jpeg',
+      'src/assets/Project/Bay Coffee/Kopi 2.jpeg',
+      'src/assets/Project/Bay Coffee/Kopi 3.jpeg',
+      'src/assets/Project/Bay Coffee/Kopi 4.jpeg'
+    ],
+    features: [
+      'Integrasi payment gateway Midtrans (QRIS, Virtual Account, GoPay/ShopeePay) dengan webhook callback otomatis',
+      'Arsitektur frontend SPA interaktif dan dinamis dibangun dengan Inertia.js dan Vue.js',
+      'Panel Admin Filament PHP komprehensif untuk pengelolaan katalog kopi, stok varian, dan status pengiriman pesanan',
+      'Fitur keranjang belanja (cart), kalkulator pesanan otomatis, serta invoice digital pelanggan'
+    ],
+    github: 'https://github.com/altheriaa',
+    live: 'https://baycoffee.shop',
+  },
+  {
+    id: 'proj-001',
+    tag: 'PRODUCTION_WEB',
+    name: 'WEBSITE FAKULTAS TEKNIK UNIVERSITAS ABULYATAMA',
+    desc: 'WEBSITE RESMI FAKULTAS TEKNIK UNIVERSITAS ABULYATAMA · CMS FILAMENT & SERVER ADMIN',
+    fullDesc: 'Website resmi Fakultas Teknik Universitas Abulyatama yang dirancang dengan arsitektur modern berbasis React di sisi frontend dan Filament PHP di sisi backend CMS. Mempermudah fakultas dalam mempublikasikan berita terkini, profil program studi, akreditasi, data kemahasiswaan, hingga kerja sama instansi.',
+    year: '2024 - PRESENT',
+    role: 'Fullstack Developer & Server Administrator',
+    client: 'Fakultas Teknik Universitas Abulyatama',
+    stack: ['REACT', 'FILAMENT PHP', 'LARAVEL', 'MYSQL', 'UBUNTU'],
+    category: 'FULLSTACK',
+    img: 'src/assets/Project/Website Teknik/Teknik 1.jpeg',
+    gallery: [
+      'src/assets/Project/Website Teknik/Teknik 1.jpeg',
+      'src/assets/Project/Website Teknik/Teknik 2.jpeg',
+      'src/assets/Project/Website Teknik/Teknik 3.jpeg'
+    ],
+    features: [
+      'Frontend responsif dan dinamis berbasis React & Tailwind CSS',
+      'Panel Admin terintegrasi berbasis Filament PHP untuk manajemen berita, artikel, dan konten fakultas',
+      'Manajemen database MySQL terstruktur untuk performa kueri yang cepat',
+      'Deployment dan konfigurasi server produksi berbasis Linux Ubuntu dengan Nginx',
+      'Fitur pelacak statistik kunjungan website harian secara realtime'
+    ],
+    github: 'https://github.com/altheriaa',
+    live: 'https://teknik.unaya.ac.id',
   },
   {
     id: 'proj-003',
-    tag: 'INVENTORY_ROP',
-    name: 'INVENTARIS ROP/FEFO',
-    desc: 'RE-ORDER POINT ALGORITHM · FEFO EXPIRATION TRACKING',
-    year: '2026',
-    stack: ['LARAVEL', 'LIVEWIRE', 'MYSQL'],
-    category: 'BACKEND',
-    img: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80&grayscale',
-    github: 'https://github.com',
-    live: '#',
-  },
-  {
-    id: 'proj-004',
-    tag: 'FRONTEND_SYS',
-    name: 'DARK PORTFOLIO V2',
-    desc: 'PERSONAL PORTFOLIO · MODERN TECHNICAL EDITORIAL UI',
-    year: '2026',
-    stack: ['REACT', 'VITE', 'FRAMER MOTION'],
-    category: 'FRONTEND',
-    img: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80&grayscale',
-    github: 'https://github.com',
-    live: '#',
+    tag: 'STARTUP_AWARD',
+    name: 'SAMPAH.SHOP — BANK SAMPAH INDUK SADAR MANDIRI',
+    desc: 'PLATFORM DIGITAL STARTUP PENGELOLAAN BANK SAMPAH · FILAMENT CMS, BLADE & DILOMBAKAN DI ICOMPEX 2025',
+    fullDesc: 'Platform digital dan aplikasi web startup Bank Sampah Sadar Induk Mandiri Kota Banda Aceh (sampah.shop) yang dirancang untuk digitalisasi pencatatan tabungan sampah nasabah, konversi nilai ekonomi limbah, monitoring setoran daur ulang, serta edukasi keberlanjutan lingkungan. Dibangun dengan framework Laravel, Filament PHP untuk panel admin interaktif, dan Blade template engine. Proyek inovasi ini berhasil dilombakan di ajang iCompEx 2025 di Kedah, Malaysia.',
+    year: '2024 - 2025',
+    role: 'Fullstack Developer',
+    client: 'Bank Sampah Sadar Induk Mandiri Banda Aceh',
+    stack: ['LARAVEL', 'FILAMENT PHP', 'BLADE', 'MYSQL', 'TAILWIND'],
+    category: 'FULLSTACK',
+    img: 'src/assets/Project/Sampah Shop/Sampah 1.jpeg',
+    gallery: [
+      'src/assets/Project/Sampah Shop/Sampah 1.jpeg',
+      'src/assets/Project/Sampah Shop/Sampah 2.jpeg',
+      'src/assets/Project/Sampah Shop/Sampah 3.jpeg'
+    ],
+    features: [
+      'Kalkulator otomatis nilai setoran sampah berdasarkan bobot, kategori, dan jenis material',
+      'Panel Admin Filament PHP komprehensif untuk rekapitulasi data nasabah dan manajemen buku kas',
+      'Pelacakan saldo buku tabungan nasabah serta histori penarikan dana secara realtime',
+      'Inovasi startup digital yang berhasil dilombakan pada ajang internasional iCompEx 2025 di Kedah, Malaysia'
+    ],
+    github: 'https://github.com/altheriaa',
+    live: 'https://sampah.shop',
   },
   {
     id: 'proj-005',
-    tag: 'ANALYTICS_PANEL',
-    name: 'ADMIN DASHBOARD',
-    desc: 'BUSINESS ANALYTICS · METRICS VISUALIZATION & CHART ENGINE',
-    year: '2025',
-    stack: ['REACT', 'CHART.JS', 'LARAVEL API'],
-    category: 'FULLSTACK',
-    img: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80&grayscale',
-    github: 'https://github.com',
-    live: '#',
+    tag: 'VILLAGE_CMS',
+    name: 'WEBSITE DESA AJE PAGAR AIR ACEH BESAR',
+    desc: 'SISTEM INFORMASI DESA BERBASIS CMS FILAMENT · PENGELOLAAN ANGGARAN & LAPORAN KEGIATAN',
+    fullDesc: 'Website dan sistem informasi Desa Aje Pagar Air untuk digitalisasi layanan gampong, publikasi transparansi anggaran dana desa, dan arsip kegiatan masyarakat.',
+    year: '2025 - PRESENT',
+    role: 'Backend Developer',
+    client: 'Pemerintah Desa Aje Pagar Air',
+    stack: ['LARAVEL', 'FILAMENT', 'MYSQL', 'TAILWIND'],
+    category: 'BACKEND',
+    img: 'src/assets/Project/Desa Aje/Aje 1.jpeg',
+    gallery: [
+      'src/assets/Project/Desa Aje/Aje 1.jpeg',
+      'src/assets/Project/Desa Aje/Aje 2.jpeg',
+      'src/assets/Project/Desa Aje/Aje 3.jpeg'
+    ],
+    features: [
+      'Panel CMS Filament yang intuitif untuk admin desa',
+      'Modul laporan transparansi anggaran & program kerja desa',
+      'Antarmuka ramah pengguna bagi warga masyarakat'
+    ],
+    github: '-',
+    live: 'https://desaajedigital.id/',
   },
   {
     id: 'proj-006',
-    tag: 'ECOMMERCE_WEB',
-    name: 'STORE PLATFORM',
-    desc: 'MODERN CHECKOUT SYSTEM · PAYMENT GATEWAY & CART ENGINE',
+    tag: 'INTERNATIONAL_AWARD',
+    name: 'ECO-FRIENDLY SYSTEM — ICOMPEX 2025',
+    desc: 'WEB APP RISET LIMBAH KACA · 2ND PLACE ICOMPEX 2025 MALAYSIA & BEST POSTER AWARD',
+    fullDesc: 'Inovasi web application pendukung riset ubin lantai ramah lingkungan dari daur ulang limbah kaca sebagai substitusi pasir buatan. Proyek ini memenangkan Juara 2 (2nd Place Category B - Green Technology & Environmental) pada ajang kompetisi inovasi internasional iCompEx 2025 di Polimas Kedah, Malaysia, serta meraih penghargaan Best Poster Award 2025.',
     year: '2025',
-    stack: ['NEXT.JS', 'TYPESCRIPT', 'PRISMA'],
-    category: 'FRONTEND',
-    img: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&q=80&grayscale',
-    github: 'https://github.com',
-    live: '#',
+    role: 'Fullstack Developer & Speaker',
+    client: 'Research & Innovation Team',
+    stack: ['LARAVEL', 'MYSQL', 'DATA COLLECTION', 'CHART ENGINE', 'BLADE'],
+    category: 'FULLSTACK',
+    img: 'src/assets/Project/iCompex/iCompex 1.jpeg',
+    gallery: [
+      'src/assets/Project/iCompex/iCompex 1.jpeg',
+      'src/assets/Project/iCompex/iCompex 2.jpeg',
+      'src/assets/Project/iCompex/iCompex 3.jpeg',
+      'src/assets/Project/iCompex/iCompex 4.jpeg',
+      'src/assets/Project/iCompex/iCompex 5.jpeg'
+    ],
+    features: [
+      'Penghargaan Juara 2 (2nd Place Category B) pada kompetisi inovasi internasional iCompEx 2025 Polimas Kedah, Malaysia',
+      'Meraih penghargaan Best Poster Award Seminar Serantau Isu-Isu Komuniti 2025',
+      'Pengembangan modul pengumpulan data riset dan kalkulasi substitusi material ramah lingkungan',
+      'Visualisasi grafik analitik dan engine statistik reduksi limbah kaca non-organik'
+    ],
+    github: 'https://teknik.unaya.ac.id/berita/fakultas-teknik-abulyatama-raih-juara-2-icompex-2025-di-malaysia',
+    live: '',
   },
 ]
 
-const filters = ['ALL', 'FULLSTACK', 'BACKEND', 'FRONTEND']
+const filters = ['ALL', 'FULLSTACK', 'BACKEND']
 
 export default function Projects() {
   const [filter, setFilter] = useState('ALL')
   const [startIndex, setStartIndex] = useState(0)
   const [direction, setDirection] = useState(0)
+  const [selectedProject, setSelectedProject] = useState(null)
+  const [activeGalleryIdx, setActiveGalleryIdx] = useState(0)
 
   const filtered = filter === 'ALL' ? allProjects : allProjects.filter(p => p.category === filter)
   const total = filtered.length
+
+  // Lock scroll when modal is open
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden'
+      setActiveGalleryIdx(0)
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [selectedProject])
 
   // Circular next / prev
   const nextSlide = () => {
@@ -122,10 +342,10 @@ export default function Projects() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
           >
-            SELECTED<br />PROJECTS.
+            EXPERIENCE & <br />PROJECTS.
           </motion.h2>
         </div>
-        
+
         <div className="projects__header-right">
           <span className="projects__count">
             LOOP [ {String(startIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')} ]
@@ -171,43 +391,45 @@ export default function Projects() {
             >
               {visibleProjects.map((proj, i) => (
                 <div key={`${proj.id}-${i}`} className="carousel-card-col">
-                  <div className="project-card">
+                  <div
+                    className="project-card"
+                    onClick={() => setSelectedProject(proj)}
+                  >
                     <div className="project-card__img">
                       <img src={proj.img} alt={proj.name} loading="lazy" />
                       <div className="project-card__tag">{proj.tag}</div>
+                      <div className="project-card__hover-overlay">
+                        <span>OPEN DETAILS ◈</span>
+                      </div>
                     </div>
 
                     <div className="project-card__body">
-                      <div className="project-card__index">
-                        ARCHIVE-{String(proj.displayIndex + 1).padStart(2, '0')}
-                      </div>
-                      <div className="project-card__name">{proj.name}</div>
-                      <div className="project-card__desc">{proj.desc}</div>
-                      
-                      <div className="project-card__meta">
-                        <div className="project-card__meta-left">YR: {proj.year}</div>
-                        <div className="project-card__tech">
-                          {proj.stack.map(t => <span key={t}>{t}</span>)}
+                      <div className="project-card__info">
+                        <div className="project-card__index">
+                          ARCHIVE-{String(proj.displayIndex + 1).padStart(2, '0')}
                         </div>
+                        <div className="project-card__name">{proj.name}</div>
+                        <div className="project-card__desc">{proj.desc}</div>
                       </div>
 
-                      <div className="project-card__actions">
-                        <a
-                          href={proj.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="project-card__action"
-                        >
-                          <span>SOURCE CODE</span>
-                          <FaGithub size={14} />
-                        </a>
-                        <a
-                          href={proj.live}
-                          className="project-card__action"
-                        >
-                          <span>OPEN PROJECT</span>
-                          <LuExternalLink size={14} />
-                        </a>
+                      <div className="project-card__bottom">
+                        <div className="project-card__meta">
+                          <div className="project-card__meta-left">YR: {proj.year}</div>
+                          <div className="project-card__tech">
+                            {proj.stack.map(t => <span key={t}>{t}</span>)}
+                          </div>
+                        </div>
+
+                        <div className="project-card__actions" onClick={(e) => e.stopPropagation()}>
+                          <button
+                            type="button"
+                            className="project-card__action"
+                            onClick={() => setSelectedProject(proj)}
+                          >
+                            <span>VIEW DETAILS</span>
+                            <LuExternalLink size={14} />
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -236,6 +458,154 @@ export default function Projects() {
           />
         ))}
       </div>
+
+      {/* ═══════════════════════════════════════════════════════════════════════
+          PROJECT DETAIL MODAL & GALLERY
+      ═══════════════════════════════════════════════════════════════════════ */}
+      {typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
+          {selectedProject && (
+            <div className="project-modal-backdrop" onClick={() => setSelectedProject(null)}>
+              <motion.div
+                className="project-modal-content"
+                onClick={(e) => e.stopPropagation()}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+              >
+                {/* Modal Top Bar */}
+                <div className="project-modal__header">
+                  <div className="project-modal__header-left">
+                    <span className="mono">PROJECT_DETAILS // {selectedProject.tag}</span>
+                    <h3 className="project-modal__title">{selectedProject.name}</h3>
+                  </div>
+                  <button
+                    className="project-modal__close-btn"
+                    onClick={() => setSelectedProject(null)}
+                    aria-label="Close"
+                  >
+                    <LuX size={20} />
+                  </button>
+                </div>
+
+                {/* Modal Body Grid */}
+                <div className="project-modal__body">
+                  {/* Left: Interactive Image Gallery */}
+                  <div className="project-modal__gallery">
+                    <div className="project-modal__main-image-frame">
+                      <img
+                        src={selectedProject.gallery ? selectedProject.gallery[activeGalleryIdx] : selectedProject.img}
+                        alt={selectedProject.name}
+                        className="project-modal__main-image"
+                      />
+                      <div className="project-modal__image-badge">
+                        PHOTO {activeGalleryIdx + 1} / {selectedProject.gallery ? selectedProject.gallery.length : 1}
+                      </div>
+                    </div>
+
+                    {/* Thumbnail Row */}
+                    {selectedProject.gallery && selectedProject.gallery.length > 1 && (
+                      <div className="project-modal__thumbnails">
+                        {selectedProject.gallery.map((imgUrl, tIdx) => (
+                          <div
+                            key={tIdx}
+                            className={`project-modal__thumb ${activeGalleryIdx === tIdx ? 'active' : ''}`}
+                            onClick={() => setActiveGalleryIdx(tIdx)}
+                          >
+                            <img src={imgUrl} alt={`Thumbnail ${tIdx + 1}`} />
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Right: Specifications & Description */}
+                  <div className="project-modal__details">
+                    <div className="project-modal__meta-box">
+                      <div className="project-modal__meta-item">
+                        <span className="project-modal__meta-key">
+                          <LuCalendar size={13} /> TIMELINE
+                        </span>
+                        <span className="project-modal__meta-val">{selectedProject.year}</span>
+                      </div>
+                      <div className="project-modal__meta-item">
+                        <span className="project-modal__meta-key">
+                          <LuServer size={13} /> ROLE
+                        </span>
+                        <span className="project-modal__meta-val">{selectedProject.role || 'Fullstack Developer'}</span>
+                      </div>
+                      <div className="project-modal__meta-item">
+                        <span className="project-modal__meta-key">
+                          <LuLayers size={13} /> CLIENT / ORG
+                        </span>
+                        <span className="project-modal__meta-val">{selectedProject.client || 'Internal Project'}</span>
+                      </div>
+                    </div>
+
+                    {/* Tech Stack Pills */}
+                    <div className="project-modal__tech-section">
+                      <div className="project-modal__section-heading">TECH STACK</div>
+                      <div className="project-modal__tech-tags">
+                        {selectedProject.stack.map(tech => (
+                          <span key={tech} className="project-modal__tech-pill">{tech}</span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <div className="project-modal__desc-section">
+                      <div className="project-modal__section-heading">OVERVIEW</div>
+                      <p className="project-modal__desc-text">
+                        {selectedProject.fullDesc || selectedProject.desc}
+                      </p>
+                    </div>
+
+                    {/* Key Features */}
+                    {selectedProject.features && (
+                      <div className="project-modal__features-section">
+                        <div className="project-modal__section-heading">KEY IMPLEMENTATION</div>
+                        <ul className="project-modal__features-list">
+                          {selectedProject.features.map((feat, fIdx) => (
+                            <li key={fIdx}>{feat}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {/* Action Buttons */}
+                    <div className="project-modal__actions">
+                      {selectedProject.live !== '#' && (
+                        <a
+                          href={selectedProject.live}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="btn-primary"
+                          style={{ flex: 1, justifyContent: 'center' }}
+                        >
+                          <span>VISIT LIVE WEBSITE</span>
+                          <LuGlobe size={15} style={{ position: 'relative', zIndex: 1 }} />
+                        </a>
+                      )}
+                      <a
+                        href={selectedProject.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn-outline"
+                        style={{ flex: 1, justifyContent: 'center' }}
+                      >
+                        <span>VIEW GITHUB REPO</span>
+                        <FaGithub size={15} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </section>
   )
 }

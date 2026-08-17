@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { LuSend, LuMail, LuMapPin } from 'react-icons/lu'
+import { LuSend, LuMail, LuMapPin, LuPhone } from 'react-icons/lu'
 import { FaGithub, FaInstagram } from 'react-icons/fa6'
 
 export default function Contact() {
@@ -31,7 +31,7 @@ export default function Contact() {
           LET'S BUILD<br />TOGETHER.
         </motion.h2>
         <p className="contact__subtitle">
-          GOT A PROJECT? LET'S TALK. /// OPEN TO COLLABORATION & FREELANCE
+          GOT A PROJECT OR OPPORTUNITY? LET'S TALK. /// OPEN TO FULL-TIME & FREELANCE
         </p>
       </div>
 
@@ -52,7 +52,7 @@ export default function Contact() {
                 id="name"
                 name="name"
                 className="contact__input"
-                placeholder="Your name..."
+                placeholder="Nama Anda..."
                 value={form.name}
                 onChange={handleChange}
                 required
@@ -65,7 +65,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 className="contact__input"
-                placeholder="your@email.com"
+                placeholder="email@anda.com"
                 value={form.email}
                 onChange={handleChange}
                 required
@@ -79,7 +79,7 @@ export default function Contact() {
               id="subject"
               name="subject"
               className="contact__input"
-              placeholder="Project inquiry..."
+              placeholder="Topik proyek / tawaran kerjasama..."
               value={form.subject}
               onChange={handleChange}
               required
@@ -92,7 +92,7 @@ export default function Contact() {
               id="message"
               name="message"
               className="contact__textarea"
-              placeholder="Tell me about your project..."
+              placeholder="Ceritakan tentang proyek atau kebutuhan sistem Anda..."
               rows={6}
               value={form.message}
               onChange={handleChange}
@@ -132,16 +132,26 @@ export default function Contact() {
 
           <div className="contact__info-item">
             <span className="contact__info-label">
+              <LuPhone size={14} />
+              PHONE / WHATSAPP
+            </span>
+            <a href="https://wa.me/628974688919" target="_blank" rel="noreferrer" className="contact__info-value">
+              +62 897-4688-919
+            </a>
+          </div>
+
+          <div className="contact__info-item">
+            <span className="contact__info-label">
               <LuMapPin size={14} />
               LOCATION
             </span>
-            <span className="contact__info-value">Indonesia, ID · UTC+7</span>
+            <span className="contact__info-value">Lamlagang, Banda Aceh, Aceh, ID</span>
           </div>
 
           <div className="contact__info-item">
             <span className="contact__info-label">AVAILABILITY</span>
             <span className="contact__info-value" style={{ color: 'var(--highlight)' }}>
-              ● OPEN TO WORK // FREELANCE & CONTRACT
+              ● OPEN TO WORK // FULLSTACK & BACKEND (LARAVEL)
             </span>
           </div>
 
@@ -152,7 +162,7 @@ export default function Contact() {
                 <FaGithub size={16} />
                 GITHUB
               </a>
-              <a href="https://www.instagram.com/dfalrzy/" target="_blank" rel="noreferrer" className="contact__social-link">
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="contact__social-link">
                 <FaInstagram size={16} />
                 INSTAGRAM
               </a>
