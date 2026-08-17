@@ -4,6 +4,19 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { LuExternalLink, LuChevronLeft, LuChevronRight, LuX, LuLayers, LuServer, LuCalendar, LuGlobe } from 'react-icons/lu'
 import { FaGithub } from 'react-icons/fa6'
 
+// Automatically import and bundle all project images for production builds
+const projectImages = import.meta.glob('../assets/Project/**/*.{jpeg,jpg,png,webp,svg,JPG,JPEG,PNG}', {
+  eager: true,
+  import: 'default'
+})
+
+const getProjectImg = (path) => {
+  if (!path) return ''
+  if (path.startsWith('http') || path.startsWith('data:') || path.startsWith('/assets/')) return path
+  const normalizedKey = path.replace(/^src\//, '../')
+  return projectImages[normalizedKey] || path
+}
+
 const allProjects = [
   {
     id: 'proj-012',
@@ -442,7 +455,7 @@ export default function Projects() {
                     onClick={() => setSelectedProject(proj)}
                   >
                     <div className="project-card__img">
-                      <img src={proj.img} alt={proj.name} loading="lazy" decoding="async" />
+                      <img src={getProjectImg(proj.img)} alt={proj.name} loading="lazy" decoding="async" />
                       <div className="project-card__tag">{proj.tag}</div>
                       <div className="project-card__hover-overlay">
                         <span>OPEN DETAILS ◈</span>
@@ -541,7 +554,7 @@ export default function Projects() {
                   <div className="project-modal__gallery">
                     <div className="project-modal__main-image-frame">
                       <img
-                        src={selectedProject.gallery ? selectedProject.gallery[activeGalleryIdx] : selectedProject.img}
+                        src={getProjectImg(selectedProject.gallery ? selectedProject.gallery[activeGalleryIdx] : selectedProject.img)}
                         alt={selectedProject.name}
                         className="project-modal__main-image"
                         decoding="async"
@@ -560,7 +573,7 @@ export default function Projects() {
                             className={`project-modal__thumb ${activeGalleryIdx === tIdx ? 'active' : ''}`}
                             onClick={() => setActiveGalleryIdx(tIdx)}
                           >
-                            <img src={imgUrl} alt={`Thumbnail ${tIdx + 1}`} loading="lazy" decoding="async" />
+                            <img src={getProjectImg(imgUrl)} alt={`Thumbnail ${tIdx + 1}`} loading="lazy" decoding="async" />
                           </div>
                         ))}
                       </div>
