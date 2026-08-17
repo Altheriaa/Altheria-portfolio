@@ -291,9 +291,28 @@ export default function Projects() {
   const [direction, setDirection] = useState(0)
   const [selectedProject, setSelectedProject] = useState(null)
   const [activeGalleryIdx, setActiveGalleryIdx] = useState(0)
+  const [cardsToShow, setCardsToShow] = useState(3)
+  const [touchStart, setTouchStart] = useState(null)
+  const [touchEnd, setTouchEnd] = useState(null)
 
   const filtered = filter === 'ALL' ? allProjects : allProjects.filter(p => p.category === filter)
   const total = filtered.length
+
+  // Responsive cards per view
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setCardsToShow(1)
+      } else if (window.innerWidth < 1120) {
+        setCardsToShow(2)
+      } else {
+        setCardsToShow(3)
+      }
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   // Lock scroll when modal is open
   useEffect(() => {
@@ -324,8 +343,29 @@ export default function Projects() {
     setStartIndex(0)
   }
 
-  // Get exactly 3 circular items for desktop display
-  const visibleProjects = [0, 1, 2].map(offset => {
+  // Touch handlers for mobile swipe
+  const handleTouchStart = (e) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    const distance = touchStart - touchEnd
+    if (distance > 50) {
+      nextSlide()
+    } else if (distance < -50) {
+      prevSlide()
+    }
+  }
+
+  // Get dynamic number of circular items based on screen size
+  const count = Math.min(cardsToShow, total)
+  const visibleProjects = Array.from({ length: count }, (_, offset) => {
     const idx = (startIndex + offset) % total
     return { ...filtered[idx], displayIndex: (startIndex + offset) % total }
   })
@@ -373,8 +413,13 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* Infinite Loop 3-Card Carousel Container */}
-      <div className="carousel-wrapper">
+      {/* Infinite Loop Responsive Carousel Container */}
+      <div
+        className="carousel-wrapper"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <button className="carousel-side-nav carousel-side-prev" onClick={prevSlide} aria-label="Previous">
           <LuChevronLeft size={24} />
         </button>
@@ -382,11 +427,12 @@ export default function Projects() {
         <div className="carousel-grid-container">
           <AnimatePresence mode="popLayout" custom={direction} initial={false}>
             <motion.div
-              key={`${filter}-${startIndex}`}
+              key={`${filter}-${startIndex}-${cardsToShow}`}
               className="carousel-cards-row"
-              initial={{ opacity: 0, x: direction > 0 ? 40 : -40 }}
+              style={{ gridTemplateColumns: `repeat(${visibleProjects.length}, minmax(0, 1fr))` }}
+              initial={{ opacity: 0, x: direction > 0 ? 30 : -30 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: direction > 0 ? -40 : 40 }}
+              exit={{ opacity: 0, x: direction > 0 ? -30 : 30 }}
               transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
             >
               {visibleProjects.map((proj, i) => (
@@ -396,7 +442,7 @@ export default function Projects() {
                     onClick={() => setSelectedProject(proj)}
                   >
                     <div className="project-card__img">
-                      <img src={proj.img} alt={proj.name} loading="lazy" />
+                      <img src={proj.img} alt={proj.name} loading="lazy" decoding="async" />
                       <div className="project-card__tag">{proj.tag}</div>
                       <div className="project-card__hover-overlay">
                         <span>OPEN DETAILS ◈</span>
@@ -498,6 +544,7 @@ export default function Projects() {
                         src={selectedProject.gallery ? selectedProject.gallery[activeGalleryIdx] : selectedProject.img}
                         alt={selectedProject.name}
                         className="project-modal__main-image"
+                        decoding="async"
                       />
                       <div className="project-modal__image-badge">
                         PHOTO {activeGalleryIdx + 1} / {selectedProject.gallery ? selectedProject.gallery.length : 1}
@@ -513,7 +560,7 @@ export default function Projects() {
                             className={`project-modal__thumb ${activeGalleryIdx === tIdx ? 'active' : ''}`}
                             onClick={() => setActiveGalleryIdx(tIdx)}
                           >
-                            <img src={imgUrl} alt={`Thumbnail ${tIdx + 1}`} />
+                            <img src={imgUrl} alt={`Thumbnail ${tIdx + 1}`} loading="lazy" decoding="async" />
                           </div>
                         ))}
                       </div>

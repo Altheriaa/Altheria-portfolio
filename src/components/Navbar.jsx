@@ -29,9 +29,40 @@ export default function Navbar({ theme, toggleTheme }) {
   }, [])
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      setScrolled(scrollY > 20)
+
+      // If scrolled near the bottom, highlight CONTACT
+      if (window.innerHeight + scrollY >= document.documentElement.scrollHeight - 60) {
+        setActive('CONTACT')
+        return
+      }
+
+      // Check sections from bottom to top
+      const sectionElements = navItems
+        .map(item => ({
+          id: item,
+          el: document.getElementById(item.toLowerCase())
+        }))
+        .filter(item => item.el !== null)
+
+      const triggerPosition = scrollY + 200
+
+      for (let i = sectionElements.length - 1; i >= 0; i--) {
+        const { id, el } = sectionElements[i]
+        if (triggerPosition >= el.offsetTop) {
+          setActive(id)
+          return
+        }
+      }
+
+      setActive('HOME')
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    handleScroll()
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   const scrollTo = (id) => {

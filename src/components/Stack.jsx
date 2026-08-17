@@ -46,7 +46,7 @@ const categories = [
       { name: 'MYSQL', Icon: SiMysql, level: 90 },
       { name: 'UBUNTU SERVER', Icon: SiUbuntu, level: 85 },
       { name: 'LINUX ADMIN', Icon: SiLinux, level: 82 },
-      { name: 'SERVER DEPLOY', Icon: LuServer, level: 80 },
+      { name: 'CI/CD', Icon: LuServer, level: 80 },
     ]
   },
   {

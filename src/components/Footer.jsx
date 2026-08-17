@@ -4,12 +4,12 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__left">
-        <span className="footer__name">ALTHERIA</span>
-        <span className="footer__sub">FULLSTACK WEB DEVELOPER // BANDA ACEH, INDONESIA</span>
+        <span className="footer__name">MUHAMMAD DAFFA ALFHARIJY</span>
+        <span className="footer__sub">SOFTWARE ENGINEER // FULLSTACK &amp; BACKEND DEVELOPER</span>
       </div>
 
       <div className="footer__center">
-        <span className="mono">© {year} · BUILT WITH REACT + VITE + LARAVEL SPIRIT</span>
+        <span className="mono">© {year} · DESIGNED &amp; DEVELOPED BY MUHAMMAD DAFFA A. (S.Kom)</span>
       </div>
 
       <div className="footer__status">

@@ -143,15 +143,15 @@ export default function Contact() {
           <div className="contact__info-item">
             <span className="contact__info-label">
               <LuMapPin size={14} />
-              LOCATION
+              LOCATION &amp; WORKSPACE
             </span>
-            <span className="contact__info-value">Lamlagang, Banda Aceh, Aceh, ID</span>
+            <span className="contact__info-value">Indonesia (Available for Remote / Hybrid / Relocation)</span>
           </div>
 
           <div className="contact__info-item">
             <span className="contact__info-label">AVAILABILITY</span>
             <span className="contact__info-value" style={{ color: 'var(--highlight)' }}>
-              ● OPEN TO WORK // FULLSTACK & BACKEND (LARAVEL)
+              ● OPEN TO WORK // FULL-TIME, CONTRACT &amp; FREELANCE
             </span>
           </div>
 

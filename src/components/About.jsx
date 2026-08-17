@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion'
 
 const specs = [
-  { key: 'FULL_NAME', val: 'Muhammad Daffa Alfharijy' },
-  { key: 'ROLE', val: 'Backend & Web Developer' },
-  { key: 'LOCATION', val: 'Lamlagang, Banda Aceh, Aceh' },
-  { key: 'EDUCATION', val: 'S1 Sistem Informasi — Univ. Abulyatama' },
-  { key: 'PREVIOUS_EDU', val: 'SMK Negeri 5 Telkom Banda Aceh (RPL)' },
-  { key: 'CORE_STACK', val: 'Laravel · FilamentPHP · Vue/Inertia · Midtrans' },
-  { key: 'SERVER_MGMT', val: 'Ubuntu Linux · Nginx · MySQL' },
-  { key: 'STATUS', val: 'Available // Open to Work' },
+  { key: 'FULL_NAME', val: 'Muhammad Daffa Alfharijy, S.Kom' },
+  { key: 'ROLE', val: 'Fullstack & Backend Web Developer' },
+  { key: 'EDUCATION', val: 'S1 Sistem Informasi — Universitas Abulyatama' },
+  { key: 'PREVIOUS_EDU', val: 'SMK Negeri 5 Telkom (RPL)' },
+  { key: 'MAIN_STACK', val: 'Laravel · Vue / Inertia · Filament · MySQL' },
+  { key: 'INTEGRATIONS', val: 'Midtrans Payment Gateway · WhatsApp API · Webhook' },
+  { key: 'ENVIRONMENT', val: 'Linux Ubuntu · Nginx · Git' },
+  { key: 'STATUS', val: 'Available for Work' },
 ]
 
 const stats = [
   { value: '4+', label: 'YEARS IN TECH' },
-  { value: '10+', label: 'SYSTEMS BUILT' },
-  { value: '2', label: 'INTERNATIONAL AWARDS' },
+  { value: '10+', label: 'PROJECTS BUILT' },
+  { value: '2', label: 'AWARDS WON' },
   { value: '100%', label: 'COMMITTED' },
 ]
 
@@ -56,18 +56,13 @@ export default function About() {
           transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
         >
           <p>
-            Saya adalah seorang Web Developer berusia 22 tahun berbasis di Banda Aceh,
-            dengan fokus mendalam pada pengembangan sistem backend menggunakan framework Laravel.
+            Saya seorang Web Developer lulusan <strong>S1 Sistem Informasi Universitas Abulyatama</strong> dengan latar belakang pendidikan vokasi di <strong>SMK Negeri 5 Telkom (Rekayasa Perangkat Lunak)</strong>. Terbiasa membangun aplikasi web dari perancangan database, backend logic, hingga integrasi antarmuka.
           </p>
           <p>
-            Berpengalaman dalam merancang dan mengembangkan berbagai ekosistem aplikasi web skala produksi,
-            seperti <strong>Sistem Informasi KKN Terpadu Unaya</strong> (RESTful API SIAKAD & Midtrans), sistem informasi reservasi <strong>Marko Barbershop</strong> dengan WhatsApp Gateway & QR Code, platform e-learning <strong>E-Plant Unaya (eplant-unaya.bio)</strong> berbasis Inertia & Vue, platform e-commerce <strong>Bay Coffee (baycoffee.shop)</strong> dengan payment gateway Midtrans, website resmi Fakultas Teknik Universitas Abulyatama, Sistem Informasi MBKM,
-            aplikasi Bank Sampah (sampah.shop), hingga CMS administrasi desa dan sistem pemerintahan.
+            Telah mengembangkan berbagai proyek web seperti <strong>Sistem Informasi KKN Terpadu UNAYA</strong>, sistem <strong>E-Helpdesk IT Support Disdik</strong>, platform <strong>Edugenzi (E-Learning PBL)</strong>, platform reservasi barbershop, dan aplikasi e-commerce.
           </p>
           <p>
-            Selain backend engineering, saya memiliki keahlian dalam integrasi payment gateway, Inertia.js & Vue.js, administrasi server Linux (Ubuntu),
-            manajemen basis data terintegrasi, konfigurasi panel admin Filament, serta komputasi awan.
-            Saya berkomitmen membangun sistem yang aman, efisien, dan berdampak nyata bagi operasional bisnis dan komunitas.
+            Fokus saya adalah membangun sistem yang fungsional, terstruktur, dan mudah digunakan, dengan pengalaman integrasi seperti payment gateway (Midtrans), WhatsApp Gateway API, webhook, dan panel admin.
           </p>
 
           <div className="about__stats">

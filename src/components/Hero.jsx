@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { FaGithub, FaInstagram } from 'react-icons/fa6'
+import dapaPhoto from '../assets/Dapa.jpeg'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -32,9 +33,9 @@ export default function Hero() {
       {/* Meta bar */}
       <div className="hero__meta-bar">
         <span>
-          &lt; <strong>SYS_INIT</strong> &gt; OPT.CLARITY &lt; <strong>BACKEND // LARAVEL</strong> &gt;
+          &lt; <strong>SYS_INIT</strong> &gt; SOFTWARE_ENGINEER &lt; <strong>FULLSTACK &amp; BACKEND</strong> &gt;
         </span>
-        <span>FORMAT: FULLSTACK // WEB &nbsp;&nbsp;&nbsp; LOCATION: BANDA ACEH / 01</span>
+        <span>DEGREE: S.Kom (SISTEM INFORMASI) &nbsp;&nbsp;&nbsp; LOCATION: INDONESIA (REMOTE FRIENDLY)</span>
       </div>
 
       {/* Main 3-column grid */}
@@ -46,7 +47,7 @@ export default function Hero() {
               {[...Array(8)].map((_, i) => <span key={i} />)}
             </div>
             <div className="hero__status-dot" />
-            <span className="hero__status-text">SYS_ONLINE // AVAILABLE FOR WORK</span>
+            <span className="hero__status-text">SYS_ONLINE // OPEN TO OPPORTUNITIES</span>
           </motion.div>
 
           <motion.h1 className="hero__title" custom={1} initial="hidden" animate="visible" variants={fadeUp}>
@@ -57,9 +58,9 @@ export default function Hero() {
           </motion.h1>
 
           <motion.div className="hero__tagline" custom={2} initial="hidden" animate="visible" variants={fadeUp}>
-            <p>***TURNING REQUIREMENTS INTO SECURE CODE____</p>
-            <p>____SPECIALIZED IN LARAVEL, FILAMENT & MYSQL.</p>
-            <p>EFFICIENT. SECURE. SCALABLE. STRUCTURED.////</p>
+            <p>*** WEB APPLICATION &amp; BACKEND DEVELOPMENT ____</p>
+            <p>____ BUILDING PRACTICAL, STRUCTURED, AND RELIABLE SYSTEMS.</p>
+            <p>DATABASE DESIGN. REST APIS. FULLSTACK INTEGRATION.////</p>
           </motion.div>
 
           <motion.div className="hero__cta" custom={3} initial="hidden" animate="visible" variants={fadeUp}>
@@ -106,12 +107,19 @@ export default function Hero() {
               }}
             />
 
-            <img src="/avatar.jpg" alt="Muhammad Daffa Alfharijy" className="hero__photo" />
+            <img
+              src={dapaPhoto}
+              alt="Muhammad Daffa Alfharijy, S.Kom — Software Engineer"
+              className="hero__photo"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
           </div>
 
           <div className="hero__photo-label">
-            <span>DAFFA // 2026</span>
-            <span>BACKEND_DEV</span>
+            <span>DAFFA // S.Kom</span>
+            <span>SOFTWARE_DEV</span>
           </div>
         </motion.div>
 
@@ -125,23 +133,23 @@ export default function Hero() {
         >
           <div className="hero__info-block">
             <span className="hero__info-label">STATUS</span>
-            <span className="hero__info-value">OPEN TO WORK // FULLSTACK</span>
+            <span className="hero__info-value">AVAILABLE // FULLSTACK &amp; BACKEND</span>
           </div>
           <div className="hero__info-block">
-            <span className="hero__info-label">LOCATION</span>
-            <span className="hero__info-value">BANDA ACEH, ID</span>
+            <span className="hero__info-label">EDUCATION</span>
+            <span className="hero__info-value">S.Kom — SISTEM INFORMASI (UNAYA)</span>
           </div>
           <div className="hero__info-block">
-            <span className="hero__info-label">SPECIALTY</span>
-            <span className="hero__info-value">LARAVEL · FILAMENT · CMS</span>
+            <span className="hero__info-label">EXPERTISE</span>
+            <span className="hero__info-value">BACKEND · REST API · DATABASE DESIGN</span>
           </div>
 
           <div className="hero__focus-box">
             <div className="hero__focus-title">CORE_COMPETENCY.</div>
             <div className="hero__focus-text">
-              DATABASE ARCHITECTURE.<br />
-              SERVER ADMINISTRATION.<br />
-              REST API & AUTH FLOW.
+              RELATIONAL DATABASE &amp; SYSTEM DESIGN.<br />
+              RESTFUL APIS &amp; THIRD-PARTY INTEGRATIONS.<br />
+              SERVER ADMINISTRATION &amp; DEPLOYMENT.
             </div>
           </div>
 
@@ -166,10 +174,10 @@ export default function Hero() {
           <span>SYS [ONLINE]</span>
         </div>
         <div className="hero__statusbar-item">
-          <span>STACK: LARAVEL + FILAMENT + MYSQL</span>
+          <span>FOCUS: WEB APPLICATION DEVELOPMENT &amp; BACKEND ARCHITECTURE</span>
         </div>
         <div className="hero__statusbar-item">
-          <span>BASE: BANDA ACEH // 2026</span>
+          <span>STATUS: OPEN TO OPPORTUNITIES // 2026</span>
         </div>
       </div>
     </section>
