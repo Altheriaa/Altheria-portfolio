@@ -51,7 +51,7 @@ export default function Navbar({ theme, toggleTheme }) {
         style={{ borderBottomColor: scrolled ? 'var(--border)' : 'transparent' }}
       >
         <div className="navbar__logo" onClick={() => scrollTo('HOME')}>
-          <span className="navbar__logo-name">DEV.</span>
+          <span className="navbar__logo-name">ALTHERIA.</span>
           <span className="navbar__logo-sub">SYS // 2026</span>
         </div>
 

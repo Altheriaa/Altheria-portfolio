@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__left">
-        <span className="footer__name">DEV.</span>
+        <span className="footer__name">ALTHERIA.</span>
         <span className="footer__sub">FULL STACK WEB DEVELOPER // INDONESIA</span>
       </div>
 

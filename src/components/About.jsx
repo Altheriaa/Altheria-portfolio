@@ -5,14 +5,14 @@ const specs = [
   { key: 'FRAMEWORK', val: 'React · Laravel · Next.js' },
   { key: 'LANGUAGES', val: 'PHP · JS · TypeScript' },
   { key: 'DATABASE', val: 'MySQL · PostgreSQL' },
-  { key: 'TOOLS', val: 'Git · Docker · Vite' },
-  { key: 'STATUS', val: 'Available // Open to Work' },
+  { key: 'TOOLS', val: 'Git · Vite' },
+  { key: 'STATUS', val: 'Open to Work' },
 ]
 
 const stats = [
-  { value: '3+', label: 'YEARS EXP' },
-  { value: '20+', label: 'PROJECTS' },
-  { value: '8+', label: 'FRAMEWORKS' },
+  { value: '2', label: 'YEARS EXP' },
+  { value: '10', label: 'PROJECTS' },
+  { value: '3', label: 'FRAMEWORKS' },
   { value: '100%', label: 'COMMITTED' },
 ]
 

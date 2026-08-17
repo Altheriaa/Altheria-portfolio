@@ -50,9 +50,7 @@ const categories = [
       { name: 'MYSQL', Icon: SiMysql, level: 85 },
       { name: 'POSTGRESQL', Icon: SiPostgresql, level: 72 },
       { name: 'GIT', Icon: SiGit, level: 90 },
-      { name: 'DOCKER', Icon: SiDocker, level: 65 },
       { name: 'LINUX', Icon: SiLinux, level: 70 },
-      { name: 'REDIS', Icon: SiRedis, level: 60 },
     ]
   }
 ]

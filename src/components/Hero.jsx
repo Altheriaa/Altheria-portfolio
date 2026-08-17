@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'
+import { FaGithub, FaInstagram } from 'react-icons/fa6'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -136,26 +136,14 @@ export default function Hero() {
             <span className="hero__info-value">UTC+7 // WIB</span>
           </div>
 
-          <div className="hero__focus-box">
-            <div className="hero__focus-title">FOCUS_LOCK_ENGAGED.</div>
-            <div className="hero__focus-text">
-              TARGET ACQUIRED.<br />
-              TRACKING SEQUENCE<br />
-              INITIATED.
-            </div>
-          </div>
-
           <div className="hero__social-connect">
             <span className="hero__social-label">CONNECT // NETWORK</span>
             <div className="hero__social-links">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="hero__social-btn" title="GitHub">
-                <FaGithub size={16} />
+              <a href="https://github.com/altheriaa" target="_blank" rel="noreferrer" className="hero__social-btn" title="GitHub">
+                <FaGithub size={18} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hero__social-btn" title="LinkedIn">
-                <FaLinkedinIn size={15} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="hero__social-btn" title="Twitter/X">
-                <FaXTwitter size={15} />
+              <a href="https://instagram.com/dfalrzy" target="_blank" rel="noreferrer" className="hero__social-btn" title="Instagram">
+                <FaInstagram size={18} />
               </a>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { LuSend, LuMail, LuMapPin } from 'react-icons/lu'
-import { FaGithub, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6'
+import { FaGithub, FaInstagram } from 'react-icons/fa6'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -125,8 +125,8 @@ export default function Contact() {
               <LuMail size={14} />
               EMAIL
             </span>
-            <a href="mailto:dev@example.com" className="contact__info-value">
-              dev@example.com
+            <a href="mailto:daffaalfharizy265@gmail.com" className="contact__info-value">
+              daffaalfharizy265@gmail.com
             </a>
           </div>
 
@@ -148,17 +148,13 @@ export default function Contact() {
           <div className="contact__info-item">
             <span className="contact__info-label">SOCIAL</span>
             <div className="contact__socials">
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="contact__social-link">
-                <FaGithub size={15} />
+              <a href="https://github.com/altheriaa" target="_blank" rel="noreferrer" className="contact__social-link">
+                <FaGithub size={16} />
                 GITHUB
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="contact__social-link">
-                <FaLinkedinIn size={15} />
-                LINKEDIN
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noreferrer" className="contact__social-link">
-                <FaXTwitter size={15} />
-                TWITTER
+              <a href="https://www.instagram.com/dfalrzy/" target="_blank" rel="noreferrer" className="contact__social-link">
+                <FaInstagram size={16} />
+                INSTAGRAM
               </a>
             </div>
           </div>
