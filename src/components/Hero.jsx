@@ -32,10 +32,12 @@ export default function Hero() {
     <section id="home" className="hero">
       {/* Meta bar */}
       <div className="hero__meta-bar">
-        <span>
-          &lt; <strong>SYS_INIT</strong> &gt; SOFTWARE_ENGINEER &lt; <strong>FULLSTACK &amp; BACKEND</strong> &gt;
-        </span>
-        <span>DEGREE: S.Kom (SISTEM INFORMASI) &nbsp;&nbsp;&nbsp; LOCATION: INDONESIA (REMOTE FRIENDLY)</span>
+        <div className="hero__meta-bar-item">
+          FULLSTACK WEB DEVELOPER ·
+        </div>
+        <div className="hero__meta-bar-item">
+          INDONESIA · OPEN TO WORK
+        </div>
       </div>
 
       {/* Main 3-column grid */}
@@ -43,11 +45,12 @@ export default function Hero() {
         {/* ── Left column ── */}
         <div className="hero__left">
           <motion.div className="hero__signal" custom={0} initial="hidden" animate="visible" variants={fadeUp}>
-            <div className="hero__signal-bars">
-              {[...Array(8)].map((_, i) => <span key={i} />)}
-            </div>
+            {/* <div className="hero__signal-bars">
+              {[...Array(6)].map((_, i) => <span key={i} />)}
+            </div> */}
             <div className="hero__status-dot" />
-            <span className="hero__status-text">SYS_ONLINE // OPEN TO OPPORTUNITIES</span>
+            <span className="hero__status-text">
+              OPEN TO OPPORTUNITIES</span>
           </motion.div>
 
           <motion.h1 className="hero__title" custom={1} initial="hidden" animate="visible" variants={fadeUp}>
@@ -58,9 +61,9 @@ export default function Hero() {
           </motion.h1>
 
           <motion.div className="hero__tagline" custom={2} initial="hidden" animate="visible" variants={fadeUp}>
-            <p>*** WEB APPLICATION &amp; BACKEND DEVELOPMENT ____</p>
+            <p>*** WEB APPLICATION & BACKEND DEVELOPMENT ____</p>
             <p>____ BUILDING PRACTICAL, STRUCTURED, AND RELIABLE SYSTEMS.</p>
-            <p>DATABASE DESIGN. REST APIS. FULLSTACK INTEGRATION.////</p>
+            <p className="dim">DATABASE DESIGN. REST APIS. FULLSTACK INTEGRATION.////</p>
           </motion.div>
 
           <motion.div className="hero__cta" custom={3} initial="hidden" animate="visible" variants={fadeUp}>
@@ -171,14 +174,14 @@ export default function Hero() {
       <div className="hero__statusbar">
         <div className="hero__statusbar-item">
           <div className="dot" />
-          <span>SYS [ONLINE]</span>
+          <span>OPEN TO WORK</span>
+        </div>
+        {/* <div className="hero__statusbar-item hero__statusbar-focus">
+          <span>WEB APPLICATION &amp; BACKEND DEVELOPMENT</span>
         </div>
         <div className="hero__statusbar-item">
-          <span>FOCUS: WEB APPLICATION DEVELOPMENT &amp; BACKEND ARCHITECTURE</span>
-        </div>
-        <div className="hero__statusbar-item">
-          <span>STATUS: OPEN TO OPPORTUNITIES // 2026</span>
-        </div>
+          <span>INDONESIA // 2026</span>
+        </div> */}
       </div>
     </section>
   )

@@ -43,7 +43,7 @@ export default function About() {
           </motion.h2>
         </div>
         <div className="about__nav-hint">
-          <span className="mono">VERIFIED // RESUME_DATA</span>
+          <span className="mono">PROFILE</span>
         </div>
       </div>
 
@@ -90,7 +90,7 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
         >
-          <div className="about__specs-title">SYSTEM_SPECS // PROFILE_DATA</div>
+          <div className="about__specs-title">PROFILE SPECIFICATIONS</div>
           {specs.map((s, i) => (
             <motion.div
               key={s.key}
