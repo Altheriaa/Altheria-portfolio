@@ -12,7 +12,7 @@ const specs = [
 ]
 
 const stats = [
-  { value: '4+', label: 'YEARS IN TECH' },
+  { value: '2+', label: 'YEARS IN TECH' },
   { value: '10+', label: 'PROJECTS BUILT' },
   { value: '2', label: 'AWARDS WON' },
   { value: '100%', label: 'COMMITTED' },
@@ -56,13 +56,13 @@ export default function About() {
           transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
         >
           <p>
-            I am a Software Engineer and Fullstack Web Developer holding a <strong>Bachelor of Information Systems from Universitas Abulyatama</strong>, built on a strong vocational foundation in <strong>Software Engineering from SMK Negeri 5 Telkom</strong>. I specialize in engineering high-performance web applications—from foundational database schemas and scalable backend logic to sleek, interactive user interfaces.
+            I am a Software Engineer and Fullstack Web Developer with a <strong>Bachelor of Information Systems</strong> from Universitas Abulyatama, and a background in <strong>Software Engineering from SMK Negeri 5 Telkom</strong>. I work across the stack — from designing database schemas and backend logic to building interactive user interfaces.
           </p>
           <p>
-            Over the years, I have architected and deployed robust production systems, including the <strong>UNAYA Integrated KKN Information System</strong>, <strong>Aceh Education Department's E-Helpdesk IT Support Platform</strong>, the <strong>Edugenzi Project-Based Learning LMS</strong>, real-time barber reservation platforms, and full-scale e-commerce solutions.
+            I've built and shipped several web systems, including the UNAYA Integrated KKN Information System, a CMS-based website for the Faculty of Engineering at Universitas Abulyatama, Aceh Education Department's E-Helpdesk IT Support Platform, the Edugenzi Project-Based Learning LMS, a real-time barber reservation platform, and an e-commerce site for a coffee brand.
           </p>
           <p>
-            My core focus is on crafting clean, resilient, and enterprise-grade software. I bring deep hands-on expertise in integrating complex third-party services, such as payment gateways (Midtrans), WhatsApp Business APIs, event-driven webhooks, and streamlined admin control panels.
+            I focus on writing clean, maintainable code and integrating third-party services — including the Midtrans payment gateway, WhatsApp Business API, webhooks, and custom admin dashboards.
           </p>
 
           <div className="about__stats">
