@@ -121,7 +121,7 @@ export default function Hero() {
           </div>
 
           <div className="hero__photo-label">
-            <span>DAFFA // S.Kom</span>
+            <span>ALTHERIA</span>
             <span>SOFTWARE_DEV</span>
           </div>
         </motion.div>
@@ -135,12 +135,8 @@ export default function Hero() {
           variants={fadeUp}
         >
           <div className="hero__info-block">
-            <span className="hero__info-label">STATUS</span>
-            <span className="hero__info-value">AVAILABLE // FULLSTACK &amp; BACKEND</span>
-          </div>
-          <div className="hero__info-block">
             <span className="hero__info-label">EDUCATION</span>
-            <span className="hero__info-value">S.Kom — SISTEM INFORMASI (UNAYA)</span>
+            <span className="hero__info-value">Bachelor of Information System @ Universitas Abulyatama</span>
           </div>
           <div className="hero__info-block">
             <span className="hero__info-label">EXPERTISE</span>

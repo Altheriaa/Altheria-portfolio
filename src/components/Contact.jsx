@@ -52,7 +52,7 @@ export default function Contact() {
                 id="name"
                 name="name"
                 className="contact__input"
-                placeholder="Nama Anda..."
+                placeholder="Your full name..."
                 value={form.name}
                 onChange={handleChange}
                 required
@@ -65,7 +65,7 @@ export default function Contact() {
                 name="email"
                 type="email"
                 className="contact__input"
-                placeholder="email@anda.com"
+                placeholder="your.email@example.com"
                 value={form.email}
                 onChange={handleChange}
                 required
@@ -79,7 +79,7 @@ export default function Contact() {
               id="subject"
               name="subject"
               className="contact__input"
-              placeholder="Topik proyek / tawaran kerjasama..."
+              placeholder="Project inquiry / collaboration / role..."
               value={form.subject}
               onChange={handleChange}
               required
@@ -92,7 +92,7 @@ export default function Contact() {
               id="message"
               name="message"
               className="contact__textarea"
-              placeholder="Ceritakan tentang proyek atau kebutuhan sistem Anda..."
+              placeholder="Tell me about your project requirements or system vision..."
               rows={6}
               value={form.message}
               onChange={handleChange}
@@ -162,7 +162,7 @@ export default function Contact() {
                 <FaGithub size={16} />
                 GITHUB
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="contact__social-link">
+              <a href="https://instagram.com/dfalrzy" target="_blank" rel="noreferrer" className="contact__social-link">
                 <FaInstagram size={16} />
                 INSTAGRAM
               </a>

@@ -3,12 +3,12 @@ import { motion } from 'framer-motion'
 const specs = [
   { key: 'FULL_NAME', val: 'Muhammad Daffa Alfharijy, S.Kom' },
   { key: 'ROLE', val: 'Fullstack & Backend Web Developer' },
-  { key: 'EDUCATION', val: 'S1 Sistem Informasi — Universitas Abulyatama' },
-  { key: 'PREVIOUS_EDU', val: 'SMK Negeri 5 Telkom (RPL)' },
-  { key: 'MAIN_STACK', val: 'Laravel · Vue / Inertia · Filament · MySQL' },
-  { key: 'INTEGRATIONS', val: 'Midtrans Payment Gateway · WhatsApp API · Webhook' },
-  { key: 'ENVIRONMENT', val: 'Linux Ubuntu · Nginx · Git' },
-  { key: 'STATUS', val: 'Available for Work' },
+  { key: 'EDUCATION', val: 'Bachelor of Information Systems — Universitas Abulyatama' },
+  { key: 'PREVIOUS_EDU', val: 'SMK Negeri 5 Telkom (Software Engineering)' },
+  { key: 'MAIN_STACK', val: 'Laravel · Vue / Inertia · Filament · MySQL · PostgreSQL' },
+  // { key: 'INTEGRATIONS', val: 'Midtrans Payment Gateway · WhatsApp API · Webhooks' },
+  { key: 'ENVIRONMENT', val: 'MacOS · Linux Ubuntu · Nginx · Apache2 · Git' },
+  { key: 'STATUS', val: 'Open for Opportunities' },
 ]
 
 const stats = [
@@ -56,13 +56,13 @@ export default function About() {
           transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
         >
           <p>
-            Saya seorang Web Developer lulusan <strong>S1 Sistem Informasi Universitas Abulyatama</strong> dengan latar belakang pendidikan vokasi di <strong>SMK Negeri 5 Telkom (Rekayasa Perangkat Lunak)</strong>. Terbiasa membangun aplikasi web dari perancangan database, backend logic, hingga integrasi antarmuka.
+            I am a Software Engineer and Fullstack Web Developer holding a <strong>Bachelor of Information Systems from Universitas Abulyatama</strong>, built on a strong vocational foundation in <strong>Software Engineering from SMK Negeri 5 Telkom</strong>. I specialize in engineering high-performance web applications—from foundational database schemas and scalable backend logic to sleek, interactive user interfaces.
           </p>
           <p>
-            Telah mengembangkan berbagai proyek web seperti <strong>Sistem Informasi KKN Terpadu UNAYA</strong>, sistem <strong>E-Helpdesk IT Support Disdik</strong>, platform <strong>Edugenzi (E-Learning PBL)</strong>, platform reservasi barbershop, dan aplikasi e-commerce.
+            Over the years, I have architected and deployed robust production systems, including the <strong>UNAYA Integrated KKN Information System</strong>, <strong>Aceh Education Department's E-Helpdesk IT Support Platform</strong>, the <strong>Edugenzi Project-Based Learning LMS</strong>, real-time barber reservation platforms, and full-scale e-commerce solutions.
           </p>
           <p>
-            Fokus saya adalah membangun sistem yang fungsional, terstruktur, dan mudah digunakan, dengan pengalaman integrasi seperti payment gateway (Midtrans), WhatsApp Gateway API, webhook, dan panel admin.
+            My core focus is on crafting clean, resilient, and enterprise-grade software. I bring deep hands-on expertise in integrating complex third-party services, such as payment gateways (Midtrans), WhatsApp Business APIs, event-driven webhooks, and streamlined admin control panels.
           </p>
 
           <div className="about__stats">

@@ -5,11 +5,11 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__left">
         <span className="footer__name">MUHAMMAD DAFFA ALFHARIJY</span>
-        <span className="footer__sub">SOFTWARE ENGINEER // FULLSTACK &amp; BACKEND DEVELOPER</span>
+        <span className="footer__sub">SOFTWARE ENGINEER &amp; BACKEND DEVELOPER</span>
       </div>
 
       <div className="footer__center">
-        <span className="mono">© {year} · DESIGNED &amp; DEVELOPED BY MUHAMMAD DAFFA A. (S.Kom)</span>
+        <span className="mono">© {year} · DESIGNED &amp; DEVELOPED BY ALTHERIA</span>
       </div>
 
       <div className="footer__status">
