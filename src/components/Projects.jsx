@@ -23,7 +23,7 @@ const allProjects = [
     tag: 'ELEARNING_PBL',
     name: 'EDUGENZI — PROJECT BASED LEARNING (PBL) LMS',
     desc: 'PLATFORM E-LEARNING PROJECT BASED LEARNING · MULTI-ROLE (ADMIN, MENTOR, PESERTA), ENROLLMENT & SERTIFIKASI',
-    fullDesc: 'Platform e-learning berbasis Project Based Learning (PBL) Edugenzi Banda Aceh yang dirancang untuk mengelola pelatihan keahlian digital seperti coding, AI, dan desain grafis secara terstruktur. Dibangun menggunakan Laravel, sistem ini menerapkan arsitektur Multi-Role (Super Admin, Mentor, dan Peserta Didik) dengan alur manajemen enrollment program pelatihan, penugasan proyek riil, evaluasi berkala, sistem penilaian komprehensif, hingga penerbitan sertifikat digital.',
+    fullDesc: 'Platform e-learning berbasis Project Based Learning untuk Edugenzi Banda Aceh. Dibangun dengan Laravel, sistem ini mengelola pelatihan keahlian digital (coding, AI, desain grafis) dengan sistem multi-role, manajemen enrollment, penugasan proyek, dan penerbitan sertifikat digital.',
     year: '2025 - PRESENT',
     role: 'Fullstack Developer & System Architect',
     client: 'Edugenzi Banda Aceh',
@@ -38,10 +38,10 @@ const allProjects = [
       'src/assets/Project/Edugenzi/1.jpeg'
     ],
     features: [
-      'Arsitektur Multi-Role RBAC terstruktur dengan hak akses spesifik untuk 3 level pengguna: Admin, Mentor, dan Peserta Didik',
-      'Engine Project Based Learning (PBL) interaktif untuk penugasan proyek riil (Coding, AI, Desain 3D), submission tugas, dan evaluasi hasil kerja',
-      'Sistem Manajemen Enrollment & Program Pelatihan untuk registrasi peserta, plotting durasi kelas, dan pemantauan status pembelajaran aktif',
-      'Modul evaluasi terintegrasi dengan rubrik penilaian mentor serta sistem validasi penerbitan sertifikat kelulusan digital'
+      'Multi-Role RBAC: Super Admin, Mentor, dan Peserta Didik dengan hak akses berbeda',
+      'Penugasan proyek riil (Coding, AI, Desain 3D), submission, dan evaluasi hasil kerja',
+      'Manajemen enrollment, durasi kelas, dan pemantauan status pembelajaran',
+      'Penerbitan sertifikat digital dengan validasi dari mentor'
     ],
     github: 'https://github.com/altheriaa',
     live: 'https://edugenzi.my.id',
@@ -51,7 +51,7 @@ const allProjects = [
     tag: 'GOV_HELPDESK',
     name: 'E-HELPDESK IT SUPPORT — DINAS PENDIDIKAN ACEH',
     desc: 'SISTEM MANAJEMEN TIKET IT SUPPORT INSTANSI · FILAMENT PHP, REALTIME CHAT, WEBHOOK & NOTIFIKASI FONNTE WA',
-    fullDesc: 'Sistem Informasi E-Helpdesk & IT Support terpadu untuk penanganan kendala teknis dan infrastruktur IT di lingkungan Dinas Pendidikan (Disdik) Aceh. Dibangun dengan framework Laravel & Filament PHP, sistem ini dilengkapi alur manajemen tiket berbasis Kanban interaktif, fitur realtime live chat penanganan teknis, integrasi webhook, serta notifikasi otomatis via WhatsApp Gateway (Fonnte) untuk pembaruan status tiket ke pegawai dan teknisi secara realtime.',
+    fullDesc: 'Sistem E-Helpdesk & IT Support untuk Dinas Pendidikan Aceh. Dibangun dengan Laravel & Filament PHP, mencakup manajemen tiket berbasis Kanban, live chat antara pegawai dan teknisi, serta notifikasi WhatsApp otomatis via Fonnte Gateway.',
     year: '2025 - PRESENT',
     role: 'Fullstack Developer & System Architect',
     client: 'Dinas Pendidikan Aceh',
@@ -65,10 +65,10 @@ const allProjects = [
       'src/assets/Project/Helpdesk/1.jpeg'
     ],
     features: [
-      'Sistem ticketing IT support interaktif dengan tampilan Kanban board dan tabel untuk tracking status kendala (Baru, Diproses, Selesai)',
-      'Integrasi notifikasi WhatsApp realtime via Fonnte Gateway & Webhook callback untuk pembaruan status progres tiket secara instan',
-      'Fitur Realtime Chat interaktif antara pelapor/pegawai unit kerja dengan tim teknisi IT Support untuk troubleshooting kendala',
-      'Dashboard analitik eksekutif, pelacakan rasio penyelesaian kendala, dan modul rekapitulasi data laporan tiket dengan fitur Export PDF'
+      'Manajemen tiket dengan Kanban board, tracking status (Baru, Diproses, Selesai)',
+      'Notifikasi WhatsApp otomatis via Fonnte Gateway & Webhook untuk update status tiket',
+      'Live chat antara pegawai dan teknisi IT untuk koordinasi troubleshooting',
+      'Dashboard analitik dan rekapitulasi laporan tiket dengan fitur Export PDF'
     ],
     github: 'https://github.com/altheriaa',
     live: 'https://itsupportaceh.my.id',
@@ -78,7 +78,7 @@ const allProjects = [
     tag: 'ACADEMIC_PORTAL',
     name: 'SISTEM INFORMASI KKN TERPADU UNIVERSITAS ABULYATAMA',
     desc: 'PORTAL AKADEMIK KKN TERPADU · INTEGRASI RESTFUL API SIAKAD, PAYMENT GATEWAY MIDTRANS & PLOTTING KELOMPOK',
-    fullDesc: 'Sistem Informasi Kuliah Kerja Nyata (KKN) Terpadu Universitas Abulyatama yang dirancang dengan arsitektur modern berbasis Laravel, Inertia.js, dan Vue.js. Sistem ini mengintegrasikan RESTful API Sistem Informasi Akademik (SIAKAD) universitas untuk sinkronisasi dan verifikasi otomatis data mahasiswa aktif, payment gateway Midtrans untuk transaksi pembayaran pendaftaran KKN secara realtime, serta fitur plotting otomatis/manual penempatan kelompok dan penugasan Dosen Pembimbing Lapangan (DPL).',
+    fullDesc: 'Sistem Informasi KKN Terpadu Universitas Abulyatama berbasis Laravel, Inertia.js, dan Vue.js. Terintegrasi dengan API SIAKAD untuk verifikasi data mahasiswa, payment gateway Midtrans untuk pembayaran pendaftaran, serta fitur plotting kelompok dan penugasan Dosen Pembimbing Lapangan (DPL).',
     year: '2025 - PRESENT',
     role: 'Fullstack Developer & System Architect',
     client: 'Universitas Abulyatama',
@@ -94,10 +94,10 @@ const allProjects = [
       'src/assets/Project/Sistem KKN/6.jpeg'
     ],
     features: [
-      'Integrasi RESTful API SIAKAD Universitas Abulyatama untuk validasi syarat SKS & data akademik mahasiswa aktif',
-      'Integrasi Payment Gateway Midtrans (QRIS, VA Bank, E-Wallet) untuk pembayaran pendaftaran KKN dengan status otomatis',
-      'Modul plotting cerdas penempatan kelompok mahasiswa, penentuan wilayah/desa pengabdian, dan penetapan Dosen Pembimbing Lapangan (DPL)',
-      'Arsitektur SPA modern, reaktif, dan performa kueri optimal menggunakan Laravel, Inertia.js, dan Vue.js'
+      'Integrasi API SIAKAD untuk validasi syarat SKS dan data mahasiswa aktif',
+      'Payment gateway Midtrans (QRIS, VA Bank, E-Wallet) untuk pembayaran pendaftaran KKN',
+      'Plotting kelompok mahasiswa, wilayah pengabdian, dan penugasan Dosen Pembimbing (DPL)',
+      'Arsitektur SPA dengan Laravel, Inertia.js, dan Vue.js'
     ],
     github: 'https://github.com/altheriaa',
     live: '#',
@@ -107,7 +107,7 @@ const allProjects = [
     tag: 'BARBERSHOP_SIM',
     name: 'MARKO BARBERSHOP — SIM & RESERVATION',
     desc: 'SISTEM INFORMASI MANAJEMEN BARBERSHOP · RESERVASI ONLINE, CHECK-IN QR CODE & NOTIFIKASI WHATSAPP GATEWAY',
-    fullDesc: 'Aplikasi web Sistem Informasi Manajemen (SIM) operasional dan reservasi online untuk Marko Barbershop. Dibangun murni menggunakan Laravel & Blade, sistem ini mempermudah pelanggan melakukan booking jadwal potong rambut, fitur check-in otomatis di lokasi menggunakan QR Code, serta notifikasi konfirmasi status antrean secara realtime langsung ke nomor WhatsApp pelanggan via integrasi WhatsApp Gateway API.',
+    fullDesc: 'Sistem Informasi Manajemen dan reservasi online untuk Marko Barbershop. Dibangun dengan Laravel & Blade, memungkinkan pelanggan booking jadwal, check-in via QR Code, dan menerima notifikasi antrian langsung ke WhatsApp via WhatsApp Gateway API.',
     year: '2024 - 2025',
     role: 'Fullstack Developer',
     client: 'Marko Barbershop',
@@ -125,10 +125,10 @@ const allProjects = [
       'src/assets/Project/Marko Barber/8.jpeg'
     ],
     features: [
-      'Sistem reservasi booking jadwal cukur online dengan pemilihan kapster/barber dan jenis layanan',
-      'Fitur check-in mandiri pelanggan di tempat menggunakan generator & scanner QR Code',
-      'Integrasi WhatsApp Gateway API untuk pengiriman otomatis pesan konfirmasi booking dan pengingat antrean live',
-      'Dashboard admin operasional barbershop untuk rekapitulasi data pelanggan, performa kapster, dan omset harian'
+      'Booking jadwal online dengan pilihan kapster dan jenis layanan',
+      'Check-in mandiri di lokasi menggunakan QR Code',
+      'Notifikasi WhatsApp otomatis untuk konfirmasi booking dan pengingat antrian',
+      'Dashboard admin untuk data pelanggan, performa kapster, dan rekapitulasi omset harian'
     ],
     github: 'https://github.com/altheriaa',
     live: 'https://markobarber.shop',
@@ -138,7 +138,7 @@ const allProjects = [
     tag: 'ELEARNING_APP',
     name: 'E-PLANT UNAYA E-LEARNING',
     desc: 'PLATFORM E-LEARNING BERBASIS WEB · LARAVEL INERTIA VUE JS & MANAJEMEN MATERI PEMBELAJARAN',
-    fullDesc: 'Platform e-learning berbasis web interaktif E-Plant Universitas Abulyatama untuk memfasilitasi pembelajaran digital mahasiswa biologi dan sains pertanian. Dibangun dengan arsitektur modern Laravel Inertia.js dan Vue.js untuk pengalaman SPA yang responsif, mencakup modul materi perkuliahan interaktif, kuis evaluasi, manajemen data mahasiswa, serta pelacakan progres belajar secara realtime.',
+    fullDesc: 'Platform e-learning web E-Plant Universitas Abulyatama untuk mahasiswa biologi dan sains pertanian. Dibangun dengan Laravel, Inertia.js, dan Vue.js, mencakup modul materi perkuliahan, kuis evaluasi, dan pelacakan progres belajar.',
     year: '2024 - PRESENT',
     role: 'Fullstack Developer',
     client: 'Universitas Abulyatama',
@@ -153,10 +153,10 @@ const allProjects = [
       'src/assets/Project/E-Plans/Plans 5.jpeg'
     ],
     features: [
-      'Arsitektur SPA modern dan dinamis dibangun menggunakan Laravel, Inertia.js, dan Vue.js',
-      'Sistem manajemen materi pembelajaran digital terstruktur dengan fitur unduh dan baca langsung',
-      'Modul kuis dan latihan interaktif untuk evaluasi pemahaman mahasiswa secara realtime',
-      'Manajemen autentikasi pengguna dan dashboard analitik progres belajar mahasiswa'
+      'Arsitektur SPA dengan Laravel, Inertia.js, dan Vue.js',
+      'Manajemen materi pembelajaran dengan fitur unduh dan baca langsung',
+      'Kuis dan latihan interaktif untuk evaluasi mahasiswa',
+      'Dashboard progres belajar dan manajemen autentikasi pengguna'
     ],
     github: 'https://github.com/altheriaa',
     live: 'https://eplant-unaya.bio/',
@@ -166,7 +166,7 @@ const allProjects = [
     tag: 'ECOMMERCE_PAYMENT',
     name: 'BAY COFFEE E-COMMERCE',
     desc: 'PLATFORM E-COMMERCE KOPI SPESIALTI · PAYMENT GATEWAY MIDTRANS, INERTIA VUE & CMS FILAMENT',
-    fullDesc: 'Platform e-commerce resmi Bay Coffee untuk penjualan produk kopi spesialti nusantara secara online. Dilengkapi integrasi Payment Gateway Midtrans (QRIS, E-Wallet, VA Bank, Credit Card) dengan sistem notifikasi webhook realtime, antarmuka responsif berbasis Laravel Inertia.js & Vue.js, serta panel admin manajemen pesanan dan inventaris produk berbasis Filament PHP.',
+    fullDesc: 'Platform e-commerce Bay Coffee untuk penjualan kopi spesialti online. Terintegrasi dengan Midtrans (QRIS, E-Wallet, VA Bank) dengan notifikasi webhook, frontend SPA berbasis Laravel Inertia.js & Vue.js, dan panel admin Filament PHP.',
     year: '2024 - 2025',
     role: 'Fullstack Developer',
     client: 'Bay Coffee Specialty',
@@ -180,10 +180,10 @@ const allProjects = [
       'src/assets/Project/Bay Coffee/Kopi 4.jpeg'
     ],
     features: [
-      'Integrasi payment gateway Midtrans (QRIS, Virtual Account, GoPay/ShopeePay) dengan webhook callback otomatis',
-      'Arsitektur frontend SPA interaktif dan dinamis dibangun dengan Inertia.js dan Vue.js',
-      'Panel Admin Filament PHP komprehensif untuk pengelolaan katalog kopi, stok varian, dan status pengiriman pesanan',
-      'Fitur keranjang belanja (cart), kalkulator pesanan otomatis, serta invoice digital pelanggan'
+      'Payment gateway Midtrans (QRIS, Virtual Account, GoPay/ShopeePay) dengan webhook otomatis',
+      'Frontend SPA dengan Inertia.js dan Vue.js',
+      'Panel Admin Filament PHP untuk manajemen katalog, stok, dan status pesanan',
+      'Keranjang belanja, kalkulator pesanan, dan invoice digital'
     ],
     github: 'https://github.com/altheriaa',
     live: 'https://baycoffee.shop',
@@ -193,7 +193,7 @@ const allProjects = [
     tag: 'PRODUCTION_WEB',
     name: 'WEBSITE FAKULTAS TEKNIK UNIVERSITAS ABULYATAMA',
     desc: 'WEBSITE RESMI FAKULTAS TEKNIK UNIVERSITAS ABULYATAMA · CMS FILAMENT & SERVER ADMIN',
-    fullDesc: 'Website resmi Fakultas Teknik Universitas Abulyatama yang dirancang dengan arsitektur modern berbasis React di sisi frontend dan Filament PHP di sisi backend CMS. Mempermudah fakultas dalam mempublikasikan berita terkini, profil program studi, akreditasi, data kemahasiswaan, hingga kerja sama instansi.',
+    fullDesc: 'Website resmi Fakultas Teknik Universitas Abulyatama dengan frontend React dan backend CMS berbasis Filament PHP. Digunakan untuk publikasi berita, profil program studi, akreditasi, data kemahasiswaan, dan kerja sama instansi.',
     year: '2024 - PRESENT',
     role: 'Fullstack Developer & Server Administrator',
     client: 'Fakultas Teknik Universitas Abulyatama',
@@ -206,11 +206,11 @@ const allProjects = [
       'src/assets/Project/Website Teknik/Teknik 3.jpeg'
     ],
     features: [
-      'Frontend responsif dan dinamis berbasis React & Tailwind CSS',
-      'Panel Admin terintegrasi berbasis Filament PHP untuk manajemen berita, artikel, dan konten fakultas',
-      'Manajemen database MySQL terstruktur untuk performa kueri yang cepat',
-      'Deployment dan konfigurasi server produksi berbasis Linux Ubuntu dengan Nginx',
-      'Fitur pelacak statistik kunjungan website harian secara realtime'
+      'Frontend responsif berbasis React & Tailwind CSS',
+      'Panel Admin Filament PHP untuk manajemen berita, artikel, dan konten fakultas',
+      'Database MySQL dengan performa kueri yang optimal',
+      'Deployment server produksi Linux Ubuntu + Nginx',
+      'Pelacak statistik kunjungan website harian'
     ],
     github: 'https://github.com/altheriaa',
     live: 'https://teknik.unaya.ac.id',
@@ -220,7 +220,7 @@ const allProjects = [
     tag: 'STARTUP_AWARD',
     name: 'SAMPAH.SHOP — BANK SAMPAH INDUK SADAR MANDIRI',
     desc: 'PLATFORM DIGITAL STARTUP PENGELOLAAN BANK SAMPAH · FILAMENT CMS, BLADE & DILOMBAKAN DI ICOMPEX 2025',
-    fullDesc: 'Platform digital dan aplikasi web startup Bank Sampah Sadar Induk Mandiri Kota Banda Aceh (sampah.shop) yang dirancang untuk digitalisasi pencatatan tabungan sampah nasabah, konversi nilai ekonomi limbah, monitoring setoran daur ulang, serta edukasi keberlanjutan lingkungan. Dibangun dengan framework Laravel, Filament PHP untuk panel admin interaktif, dan Blade template engine. Proyek inovasi ini berhasil dilombakan di ajang iCompEx 2025 di Kedah, Malaysia.',
+    fullDesc: 'Aplikasi web Bank Sampah Sadar Induk Mandiri Banda Aceh (sampah.shop) untuk digitalisasi pencatatan tabungan sampah, konversi nilai ekonomi limbah, dan monitoring setoran daur ulang. Dibangun dengan Laravel, Filament PHP, dan Blade. Dilombakan di iCompEx 2025, Kedah, Malaysia.',
     year: '2024 - 2025',
     role: 'Fullstack Developer',
     client: 'Bank Sampah Sadar Induk Mandiri Banda Aceh',
@@ -233,10 +233,10 @@ const allProjects = [
       'src/assets/Project/Sampah Shop/Sampah 3.jpeg'
     ],
     features: [
-      'Kalkulator otomatis nilai setoran sampah berdasarkan bobot, kategori, dan jenis material',
-      'Panel Admin Filament PHP komprehensif untuk rekapitulasi data nasabah dan manajemen buku kas',
-      'Pelacakan saldo buku tabungan nasabah serta histori penarikan dana secara realtime',
-      'Inovasi startup digital yang berhasil dilombakan pada ajang internasional iCompEx 2025 di Kedah, Malaysia'
+      'Kalkulator nilai setoran sampah berdasarkan bobot, kategori, dan jenis material',
+      'Panel Admin Filament PHP untuk data nasabah dan manajemen buku kas',
+      'Pelacakan saldo tabungan dan histori penarikan dana nasabah',
+      'Dilombakan di kompetisi inovasi internasional iCompEx 2025, Kedah, Malaysia'
     ],
     github: 'https://github.com/altheriaa',
     live: 'https://sampah.shop',
@@ -271,7 +271,7 @@ const allProjects = [
     tag: 'INTERNATIONAL_AWARD',
     name: 'ECO-FRIENDLY SYSTEM — ICOMPEX 2025',
     desc: 'WEB APP RISET LIMBAH KACA · 2ND PLACE ICOMPEX 2025 MALAYSIA & BEST POSTER AWARD',
-    fullDesc: 'Inovasi web application pendukung riset ubin lantai ramah lingkungan dari daur ulang limbah kaca sebagai substitusi pasir buatan. Proyek ini memenangkan Juara 2 (2nd Place Category B - Green Technology & Environmental) pada ajang kompetisi inovasi internasional iCompEx 2025 di Polimas Kedah, Malaysia, serta meraih penghargaan Best Poster Award 2025.',
+    fullDesc: 'Web application pendukung riset ubin lantai ramah lingkungan dari daur ulang limbah kaca sebagai substitusi pasir. Meraih Juara 2 (CLASS B - Construction & Materials) di iCompEx 2025 Polimas Kedah, Malaysia, dan Best Poster Award 2025.',
     year: '2025',
     role: 'Fullstack Developer & Speaker',
     client: 'Research & Innovation Team',
@@ -286,10 +286,10 @@ const allProjects = [
       'src/assets/Project/iCompex/iCompex 5.jpeg'
     ],
     features: [
-      'Penghargaan Juara 2 (2nd Place Category B) pada kompetisi inovasi internasional iCompEx 2025 Polimas Kedah, Malaysia',
-      'Meraih penghargaan Best Poster Award Seminar Serantau Isu-Isu Komuniti 2025',
-      'Pengembangan modul pengumpulan data riset dan kalkulasi substitusi material ramah lingkungan',
-      'Visualisasi grafik analitik dan engine statistik reduksi limbah kaca non-organik'
+      'Juara 2 (CLASS B - Construction & Materials) di iCompEx 2025, Polimas Kedah, Malaysia',
+      'Best Poster Award — Seminar Serantau Isu-Isu Komuniti 2025',
+      'Modul pengumpulan data riset dan kalkulasi substitusi material ramah lingkungan',
+      'Visualisasi grafik dan statistik reduksi limbah kaca'
     ],
     github: 'https://teknik.unaya.ac.id/berita/fakultas-teknik-abulyatama-raih-juara-2-icompex-2025-di-malaysia',
     live: '',
